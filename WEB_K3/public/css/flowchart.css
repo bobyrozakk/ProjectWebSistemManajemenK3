@@ -243,6 +243,23 @@
     padding:       0;
 }
 
+/* Jajar Genjang = Input/Output / Keputusan Khusus */
+.flow-node--jajar-genjang {
+    transform:     skewX(-20deg);
+    border-radius: var(--radius-xs, 4px);
+    min-width:     140px;
+    padding:       12px 20px;
+}
+
+.flow-node--jajar-genjang:hover {
+    transform: scale(1.05) skewX(-20deg);
+}
+
+.flow-node--jajar-genjang .node-label {
+    transform:   skewX(20deg); /* Counter skew agar teks tetap tegak */
+    display:     block;
+}
+
 /* Label di dalam berlian harus di-counter-rotate dan tetap putih */
 .flow-node--berlian .node-label {
     transform:   rotate(-45deg);

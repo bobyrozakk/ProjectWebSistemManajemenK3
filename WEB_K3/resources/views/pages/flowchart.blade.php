@@ -103,7 +103,7 @@
                                 </div>
                                 <div class="flow-arrow"></div>
 
-                                <div class="flow-node flow-node--berlian" style="background:#f0a500;">
+                                <div class="flow-node flow-node--jajar-genjang" style="background:#f0a500;">
                                     <span class="node-label" style="color:#1a1a1a; text-shadow: 0 1px 2px rgba(255,255,255,0.3);">Risiko Tinggi?</span>
                                 </div>
                                 <div class="flow-arrow"></div>
