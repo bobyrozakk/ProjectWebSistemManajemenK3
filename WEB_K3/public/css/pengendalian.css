@@ -1,0 +1,401 @@
+/* =====================================================================
+   pengendalian.css — Halaman Protokol Pengendalian Dokumen
+   Website Dokumentasi SMK3
+   ===================================================================== */
+
+/* ── Section Checklist ────────────────────────────────────────────── */
+.checklist-section {
+    background:  var(--putih);
+    padding:     var(--space-4xl) 0;
+}
+
+.checklist-layout {
+    display:   grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    gap:       var(--space-3xl);
+    align-items: flex-start;
+}
+
+/* ── Checklist Interaktif (CSS Only) ──────────────────────────────── */
+.checklist-box {
+    background:    var(--abu-muda);
+    border-radius: var(--radius-lg);
+    padding:       var(--space-2xl);
+    border:        1px solid var(--abu-sedang);
+}
+
+.checklist-box__title {
+    font-family:    var(--font-heading);
+    font-size:      var(--text-xl);
+    font-weight:    700;
+    color:          var(--biru-tua);
+    margin-bottom:  var(--space-xs);
+}
+
+.checklist-box__sub {
+    font-size:      var(--text-sm);
+    margin-bottom:  var(--space-xl);
+}
+
+/* Item checklist menggunakan checkbox CSS */
+.checklist-item {
+    display:       flex;
+    align-items:   flex-start;
+    gap:           var(--space-md);
+    padding:       var(--space-md);
+    border-radius: var(--radius-md);
+    margin-bottom: var(--space-sm);
+    background:    var(--putih);
+    border:        1px solid var(--abu-sedang);
+    transition:    all var(--transition-fast);
+    cursor:        pointer;
+}
+
+.checklist-item:last-child { margin-bottom: 0; }
+
+.checklist-item:hover {
+    border-color: var(--biru-muda);
+    box-shadow:   var(--shadow-sm);
+}
+
+/* Input checkbox tersembunyi */
+.checklist-item input[type="checkbox"] {
+    display: none;
+}
+
+/* Custom checkbox visual */
+.checklist-item__check {
+    width:         22px;
+    height:        22px;
+    border:        2px solid var(--abu-sedang);
+    border-radius: 6px;
+    display:       flex;
+    align-items:   center;
+    justify-content: center;
+    flex-shrink:   0;
+    transition:    all var(--transition-fast);
+    margin-top:    2px;
+    background:    var(--putih);
+}
+
+/* Saat checkbox dicentang */
+.checklist-item input[type="checkbox"]:checked ~ .checklist-item__check {
+    background:   var(--hijau);
+    border-color: var(--hijau);
+}
+
+.checklist-item input[type="checkbox"]:checked ~ .checklist-item__check::after {
+    content:     '✓';
+    color:       var(--putih);
+    font-size:   var(--text-sm);
+    font-weight: 700;
+    line-height: 1;
+}
+
+/* Teks setelah dicentang */
+.checklist-item input[type="checkbox"]:checked ~ .checklist-item__content .checklist-item__name {
+    text-decoration: line-through;
+    color:           var(--abu-tua);
+}
+
+.checklist-item__content { flex: 1; }
+
+.checklist-item__name {
+    font-weight:   600;
+    font-size:     var(--text-sm);
+    color:         var(--hitam);
+    margin-bottom: 2px;
+    transition:    all var(--transition-fast);
+    display:       flex;
+    align-items:   center;
+    gap:           var(--space-sm);
+}
+
+.checklist-item__desc {
+    font-size:   var(--text-xs);
+    color:       var(--abu-tua);
+    line-height: 1.5;
+}
+
+/* Badge wajib */
+.tag-wajib {
+    display:        inline-block;
+    padding:        2px 7px;
+    background:     rgba(239,68,68,0.1);
+    color:          #dc2626;
+    border-radius:  var(--radius-full);
+    font-size:      10px;
+    font-weight:    700;
+    letter-spacing: 0.05em;
+}
+
+.tag-opsional {
+    display:        inline-block;
+    padding:        2px 7px;
+    background:     rgba(107,114,128,0.1);
+    color:          var(--abu-tua);
+    border-radius:  var(--radius-full);
+    font-size:      10px;
+    font-weight:    700;
+}
+
+/* ── Info Panel (Kanan) ───────────────────────────────────────────── */
+.pengendalian-info {
+    display:        flex;
+    flex-direction: column;
+    gap:            var(--space-lg);
+    position:       sticky;
+    top:            calc(var(--navbar-height) + var(--space-xl));
+}
+
+.info-card {
+    background:    var(--biru-tua);
+    border-radius: var(--radius-lg);
+    padding:       var(--space-xl);
+    color:         var(--putih);
+}
+
+.info-card__title {
+    font-family:   var(--font-heading);
+    font-size:     var(--text-base);
+    font-weight:   700;
+    color:         var(--emas);
+    margin-bottom: var(--space-md);
+    display:       flex;
+    align-items:   center;
+    gap:           var(--space-sm);
+}
+
+.info-card__text {
+    font-size:   var(--text-sm);
+    color:       rgba(255,255,255,0.7);
+    line-height: 1.7;
+}
+
+/* Contoh nomor dokumen */
+.doc-number-example {
+    background:    rgba(0,0,0,0.3);
+    border-radius: var(--radius-sm);
+    padding:       var(--space-md);
+    margin-top:    var(--space-md);
+    font-family:   'Courier New', monospace;
+    font-size:     var(--text-sm);
+    color:         var(--emas);
+    letter-spacing: 0.05em;
+    border:        1px solid rgba(240,165,0,0.2);
+}
+
+.doc-number-example span {
+    display:       block;
+    font-size:     var(--text-xs);
+    color:         rgba(255,255,255,0.4);
+    margin-top:    4px;
+    font-family:   var(--font-body);
+    letter-spacing: 0;
+}
+
+/* ── Section Badge Status Dokumen ────────────────────────────────── */
+.status-section {
+    background:  var(--abu-muda);
+    padding:     var(--space-4xl) 0;
+}
+
+.status-grid {
+    display:               grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap:                   var(--space-xl);
+}
+
+.status-card {
+    background:    var(--putih);
+    border-radius: var(--radius-lg);
+    padding:       var(--space-2xl);
+    border:        1px solid var(--abu-sedang);
+    transition:    all var(--transition);
+    position:      relative;
+    overflow:      hidden;
+}
+
+.status-card:hover {
+    transform:  translateY(-4px);
+    box-shadow: var(--shadow-md);
+}
+
+/* Warna aksen atas */
+.status-card::before {
+    content:    '';
+    position:   absolute;
+    top:        0;
+    left:       0;
+    right:      0;
+    height:     4px;
+}
+
+.status-card.hijau::before  { background: var(--hijau); }
+.status-card.merah::before  { background: #ef4444; }
+.status-card.biru::before   { background: var(--biru-muda); }
+.status-card.abu::before    { background: var(--abu-tua); }
+
+.status-card__header {
+    display:       flex;
+    align-items:   center;
+    justify-content: space-between;
+    margin-bottom: var(--space-lg);
+}
+
+/* Badge besar status */
+.status-badge-large {
+    display:        inline-block;
+    padding:        8px 20px;
+    border-radius:  var(--radius-md);
+    font-family:    var(--font-heading);
+    font-size:      var(--text-sm);
+    font-weight:    800;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    border:         2px solid transparent;
+}
+
+.status-badge-large.hijau {
+    background:   rgba(16,185,129,0.1);
+    color:        #059669;
+    border-color: rgba(16,185,129,0.3);
+}
+
+.status-badge-large.merah {
+    background:   rgba(239,68,68,0.1);
+    color:        #dc2626;
+    border-color: rgba(239,68,68,0.3);
+}
+
+.status-badge-large.biru {
+    background:   rgba(37,99,235,0.1);
+    color:        var(--biru-muda);
+    border-color: rgba(37,99,235,0.3);
+}
+
+.status-badge-large.abu {
+    background:   rgba(107,114,128,0.1);
+    color:        var(--abu-tua);
+    border-color: rgba(107,114,128,0.3);
+}
+
+.status-badge-large.hijau::before  { content: '● '; }
+.status-badge-large.merah::before  { content: '● '; }
+.status-badge-large.biru::before   { content: '● '; }
+.status-badge-large.abu::before    { content: '● '; }
+
+.status-card__desc {
+    font-size:     var(--text-sm);
+    line-height:   1.7;
+    margin-bottom: var(--space-md);
+}
+
+.status-card__contoh {
+    background:    var(--abu-muda);
+    border-radius: var(--radius-sm);
+    padding:       var(--space-sm) var(--space-md);
+    font-size:     var(--text-xs);
+    color:         var(--abu-tua);
+    border-left:   3px solid var(--abu-sedang);
+}
+
+.status-card__contoh strong {
+    color:      var(--biru-tua);
+    font-weight: 600;
+}
+
+/* ── Info Box Dokumen Usang ───────────────────────────────────────── */
+.usang-section {
+    background:  var(--putih);
+    padding:     var(--space-4xl) 0;
+}
+
+.usang-box {
+    background:    linear-gradient(135deg, #fef3c7, #fffbeb);
+    border:        2px solid #f59e0b;
+    border-radius: var(--radius-lg);
+    padding:       var(--space-2xl);
+    position:      relative;
+    overflow:      hidden;
+}
+
+.usang-box::before {
+    content:    '⚠';
+    position:   absolute;
+    top:        -20px;
+    right:      20px;
+    font-size:  8rem;
+    opacity:    0.05;
+    color:      #f59e0b;
+}
+
+.usang-box__header {
+    display:       flex;
+    align-items:   center;
+    gap:           var(--space-md);
+    margin-bottom: var(--space-xl);
+}
+
+.usang-box__icon {
+    font-size:   2rem;
+    flex-shrink: 0;
+}
+
+.usang-box__title {
+    font-family: var(--font-heading);
+    font-size:   var(--text-xl);
+    font-weight: 700;
+    color:       #92400e;
+}
+
+.usang-box__subtitle {
+    font-size: var(--text-sm);
+    color:     #b45309;
+}
+
+.usang-rules {
+    display:        flex;
+    flex-direction: column;
+    gap:            var(--space-md);
+}
+
+.usang-rule {
+    display:       flex;
+    align-items:   flex-start;
+    gap:           var(--space-md);
+    background:    rgba(255,255,255,0.7);
+    border-radius: var(--radius-md);
+    padding:       var(--space-md) var(--space-lg);
+    border:        1px solid rgba(245,158,11,0.2);
+}
+
+.usang-rule__num {
+    font-family:   var(--font-heading);
+    font-size:     var(--text-xl);
+    font-weight:   800;
+    color:         #d97706;
+    line-height:   1;
+    flex-shrink:   0;
+    min-width:     30px;
+}
+
+.usang-rule__text {
+    font-size:   var(--text-sm);
+    color:       #78350f;
+    line-height: 1.6;
+}
+
+/* ── Responsif ────────────────────────────────────────────────────── */
+@media (max-width: 1024px) {
+    .checklist-layout {
+        grid-template-columns: 1fr;
+    }
+    .pengendalian-info {
+        position: static;
+    }
+}
+
+@media (max-width: 768px) {
+    .status-grid { grid-template-columns: 1fr; }
+}

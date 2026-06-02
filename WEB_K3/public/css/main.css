@@ -1,0 +1,404 @@
+/* =====================================================================
+   main.css — Reset global, variabel warna, tipografi, dan utilitas
+   Website Dokumentasi SMK3 | K3 Course Project
+   ===================================================================== */
+
+/* ── Google Fonts ─────────────────────────────────────────────────── */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;600;700;800&display=swap');
+
+/* ── CSS Custom Properties (Variabel Warna & Desain) ──────────────── */
+:root {
+    /* Palet Warna Utama */
+    --biru-tua:     #1a3a5c;
+    --biru-medium:  #1e4d7b;
+    --biru-muda:    #2563eb;
+    --emas:         #f0a500;
+    --emas-muda:    #f7c244;
+    --putih:        #ffffff;
+    --abu-muda:     #f5f5f5;
+    --abu-sedang:   #e5e7eb;
+    --abu-tua:      #6b7280;
+    --hitam:        #111827;
+    --hijau:        #10b981;
+    --merah:        #ef4444;
+    --ungu:         #7c3aed;
+
+    /* Gradien */
+    --gradient-utama:  linear-gradient(135deg, #1a3a5c 0%, #1e4d7b 50%, #2563eb 100%);
+    --gradient-emas:   linear-gradient(135deg, #f0a500 0%, #f7c244 100%);
+    --gradient-hero:   linear-gradient(160deg, #0f2540 0%, #1a3a5c 40%, #1e4d7b 100%);
+
+    /* Tipografi */
+    --font-body:     'Inter', sans-serif;
+    --font-heading:  'Poppins', sans-serif;
+
+    /* Ukuran Teks */
+    --text-xs:   0.75rem;
+    --text-sm:   0.875rem;
+    --text-base: 1rem;
+    --text-lg:   1.125rem;
+    --text-xl:   1.25rem;
+    --text-2xl:  1.5rem;
+    --text-3xl:  1.875rem;
+    --text-4xl:  2.25rem;
+    --text-5xl:  3rem;
+
+    /* Spacing */
+    --space-xs:  0.25rem;
+    --space-sm:  0.5rem;
+    --space-md:  1rem;
+    --space-lg:  1.5rem;
+    --space-xl:  2rem;
+    --space-2xl: 3rem;
+    --space-3xl: 4rem;
+    --space-4xl: 6rem;
+
+    /* Border Radius */
+    --radius-sm:  6px;
+    --radius-md:  12px;
+    --radius-lg:  20px;
+    --radius-xl:  30px;
+    --radius-full: 9999px;
+
+    /* Shadow */
+    --shadow-sm:  0 1px 3px rgba(0,0,0,0.08), 0 1px 2px rgba(0,0,0,0.05);
+    --shadow-md:  0 4px 16px rgba(0,0,0,0.1);
+    --shadow-lg:  0 10px 40px rgba(0,0,0,0.15);
+    --shadow-biru: 0 8px 32px rgba(26,58,92,0.25);
+    --shadow-emas: 0 8px 24px rgba(240,165,0,0.3);
+
+    /* Transisi */
+    --transition: 0.3s ease;
+    --transition-fast: 0.15s ease;
+
+    /* Lebar Navbar */
+    --navbar-height: 70px;
+}
+
+/* ── CSS Reset & Base ─────────────────────────────────────────────── */
+*, *::before, *::after {
+    margin:  0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    font-size: 16px;
+}
+
+body {
+    font-family:      var(--font-body);
+    font-size:        var(--text-base);
+    color:            var(--hitam);
+    background-color: var(--abu-muda);
+    line-height:      1.6;
+    overflow-x:       hidden;
+    padding-top:      var(--navbar-height); /* ruang untuk navbar fixed */
+}
+
+/* ── Tipografi Dasar ──────────────────────────────────────────────── */
+h1, h2, h3, h4, h5, h6 {
+    font-family:  var(--font-heading);
+    line-height:  1.2;
+    font-weight:  700;
+    color:        var(--hitam);
+}
+
+h1 { font-size: var(--text-4xl); }
+h2 { font-size: var(--text-3xl); }
+h3 { font-size: var(--text-2xl); }
+h4 { font-size: var(--text-xl); }
+h5 { font-size: var(--text-lg); }
+h6 { font-size: var(--text-base); }
+
+p {
+    color:       var(--abu-tua);
+    line-height: 1.7;
+}
+
+a {
+    text-decoration: none;
+    color:           inherit;
+    transition:      color var(--transition-fast);
+}
+
+img {
+    max-width: 100%;
+    display:   block;
+}
+
+ul, ol {
+    list-style: none;
+}
+
+button {
+    cursor: pointer;
+    border: none;
+    background: none;
+}
+
+/* ── Layout Umum ──────────────────────────────────────────────────── */
+.container {
+    max-width:     1200px;
+    margin:        0 auto;
+    padding-left:  var(--space-xl);
+    padding-right: var(--space-xl);
+}
+
+.section {
+    padding-top:    var(--space-4xl);
+    padding-bottom: var(--space-4xl);
+}
+
+.section-alt {
+    background-color: var(--putih);
+}
+
+/* ── Hero Mini (digunakan di semua halaman selain home) ────────────── */
+.hero-mini {
+    background:    var(--gradient-hero);
+    padding:       var(--space-3xl) 0 var(--space-2xl);
+    position:      relative;
+    overflow:      hidden;
+}
+
+.hero-mini::before {
+    content:          '';
+    position:         absolute;
+    top:              -50%;
+    right:            -10%;
+    width:            400px;
+    height:           400px;
+    background:       radial-gradient(circle, rgba(240,165,0,0.15) 0%, transparent 70%);
+    border-radius:    50%;
+}
+
+.hero-mini::after {
+    content:          '';
+    position:         absolute;
+    bottom:           -30%;
+    left:             5%;
+    width:            250px;
+    height:           250px;
+    background:       radial-gradient(circle, rgba(37,99,235,0.2) 0%, transparent 70%);
+    border-radius:    50%;
+}
+
+.hero-mini .container {
+    position: relative;
+    z-index:  1;
+}
+
+.hero-mini h1 {
+    color:         var(--putih);
+    font-size:     var(--text-3xl);
+    margin-bottom: var(--space-sm);
+}
+
+.hero-mini p {
+    color:     rgba(255,255,255,0.75);
+    font-size: var(--text-lg);
+}
+
+/* ── Breadcrumb ───────────────────────────────────────────────────── */
+.breadcrumb {
+    display:        flex;
+    align-items:    center;
+    gap:            var(--space-sm);
+    font-size:      var(--text-sm);
+    color:          rgba(255,255,255,0.6);
+    margin-bottom:  var(--space-lg);
+}
+
+.breadcrumb a {
+    color:       rgba(255,255,255,0.7);
+    transition:  color var(--transition-fast);
+}
+
+.breadcrumb a:hover { color: var(--emas); }
+
+.breadcrumb span { color: rgba(255,255,255,0.5); }
+
+.breadcrumb .current { color: var(--emas); font-weight: 600; }
+
+/* ── Komponen Badge ───────────────────────────────────────────────── */
+.badge {
+    display:       inline-block;
+    padding:       3px 10px;
+    border-radius: var(--radius-full);
+    font-size:     var(--text-xs);
+    font-weight:   700;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+}
+
+.badge-biru     { background: rgba(37,99,235,0.12);  color: var(--biru-muda); }
+.badge-emas     { background: rgba(240,165,0,0.15);  color: #b07a00; }
+.badge-hijau    { background: rgba(16,185,129,0.12); color: #059669; }
+.badge-merah    { background: rgba(239,68,68,0.12);  color: #dc2626; }
+.badge-abu      { background: rgba(107,114,128,0.12);color: var(--abu-tua); }
+.badge-ungu     { background: rgba(124,58,237,0.12); color: var(--ungu); }
+
+/* ── Komponen Tombol ──────────────────────────────────────────────── */
+.btn {
+    display:        inline-flex;
+    align-items:    center;
+    gap:            var(--space-sm);
+    padding:        12px 28px;
+    border-radius:  var(--radius-full);
+    font-family:    var(--font-heading);
+    font-size:      var(--text-sm);
+    font-weight:    600;
+    letter-spacing: 0.02em;
+    transition:     all var(--transition);
+    cursor:         pointer;
+    border:         2px solid transparent;
+    text-decoration: none;
+}
+
+.btn-primary {
+    background:  var(--gradient-emas);
+    color:       var(--hitam);
+    box-shadow:  var(--shadow-emas);
+}
+
+.btn-primary:hover {
+    transform:   translateY(-2px);
+    box-shadow:  0 12px 32px rgba(240,165,0,0.45);
+    color:       var(--hitam);
+}
+
+.btn-secondary {
+    background:   transparent;
+    color:        var(--putih);
+    border-color: rgba(255,255,255,0.5);
+}
+
+.btn-secondary:hover {
+    background:   rgba(255,255,255,0.1);
+    border-color: var(--putih);
+}
+
+.btn-outline {
+    background:   transparent;
+    color:        var(--biru-tua);
+    border-color: var(--biru-tua);
+}
+
+.btn-outline:hover {
+    background: var(--biru-tua);
+    color:      var(--putih);
+}
+
+/* ── Komponen Card ────────────────────────────────────────────────── */
+.card {
+    background:    var(--putih);
+    border-radius: var(--radius-lg);
+    padding:       var(--space-xl);
+    box-shadow:    var(--shadow-md);
+    transition:    transform var(--transition), box-shadow var(--transition);
+}
+
+.card:hover {
+    transform:  translateY(-6px);
+    box-shadow: var(--shadow-lg);
+}
+
+/* ── Section Header ───────────────────────────────────────────────── */
+.section-header {
+    text-align:     center;
+    margin-bottom:  var(--space-3xl);
+}
+
+.section-header .label {
+    display:        inline-block;
+    font-size:      var(--text-sm);
+    font-weight:    600;
+    color:          var(--emas);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-bottom:  var(--space-sm);
+}
+
+.section-header h2 {
+    color:         var(--biru-tua);
+    margin-bottom: var(--space-md);
+}
+
+.section-header p {
+    font-size:  var(--text-lg);
+    max-width:  600px;
+    margin:     0 auto;
+}
+
+/* ── Grid Responsif ───────────────────────────────────────────────── */
+.grid-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: var(--space-xl); }
+.grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-xl); }
+.grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--space-xl); }
+
+/* ── Utilitas Teks ────────────────────────────────────────────────── */
+.text-center { text-align: center; }
+.text-left   { text-align: left; }
+.text-emas   { color: var(--emas) !important; }
+.text-biru   { color: var(--biru-tua) !important; }
+.text-putih  { color: var(--putih) !important; }
+.fw-bold     { font-weight: 700; }
+.fw-semibold { font-weight: 600; }
+
+/* ── Utilitas Display ─────────────────────────────────────────────── */
+.d-flex        { display: flex; }
+.align-center  { align-items: center; }
+.justify-center{ justify-content: center; }
+.gap-sm        { gap: var(--space-sm); }
+.gap-md        { gap: var(--space-md); }
+.gap-lg        { gap: var(--space-lg); }
+
+/* ── Animasi Global ───────────────────────────────────────────────── */
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+@keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50%       { transform: scale(1.05); }
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50%       { transform: translateY(-10px); }
+}
+
+@keyframes shimmer {
+    0%   { background-position: -200% center; }
+    100% { background-position: 200% center; }
+}
+
+.animate-fadeInUp { animation: fadeInUp 0.7s ease forwards; }
+
+/* ── Responsif ────────────────────────────────────────────────────── */
+@media (max-width: 1024px) {
+    .grid-4 { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 768px) {
+    :root { --navbar-height: 64px; }
+    .container { padding-left: var(--space-lg); padding-right: var(--space-lg); }
+    .section   { padding-top: var(--space-3xl); padding-bottom: var(--space-3xl); }
+    .grid-2, .grid-3, .grid-4 { grid-template-columns: 1fr; }
+    h1 { font-size: var(--text-3xl); }
+    h2 { font-size: var(--text-2xl); }
+    .hero-mini h1 { font-size: var(--text-2xl); }
+}
+
+@media (max-width: 480px) {
+    .container { padding-left: var(--space-md); padding-right: var(--space-md); }
+    h1 { font-size: var(--text-2xl); }
+    .btn { padding: 10px 22px; font-size: var(--text-xs); }
+}
