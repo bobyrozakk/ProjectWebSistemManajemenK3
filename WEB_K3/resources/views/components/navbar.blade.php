@@ -7,13 +7,13 @@
 @php
     $currentRoute = Route::currentRouteName();
     $navLinks = [
-        ['route' => 'home',         'label' => 'Beranda',       'icon' => '🏠'],
-        ['route' => 'regulasi',     'label' => 'Regulasi',      'icon' => '⚖️'],
-        ['route' => 'tingkatan',    'label' => 'Tingkatan',     'icon' => '📚'],
-        ['route' => 'flowchart',    'label' => 'Flowchart',     'icon' => '🔄'],
-        ['route' => 'pengendalian', 'label' => 'Pengendalian',  'icon' => '🗂️'],
-        ['route' => 'hirarc',       'label' => 'HIRARC',        'icon' => '🛡️'],
-        ['route' => 'template',     'label' => 'Template',      'icon' => '📥'],
+        ['route' => 'home',         'label' => 'Beranda',       'icon' => 'home'],
+        ['route' => 'regulasi',     'label' => 'Regulasi',      'icon' => 'scale'],
+        ['route' => 'tingkatan',    'label' => 'Tingkatan',     'icon' => 'layers'],
+        ['route' => 'flowchart',    'label' => 'Flowchart',     'icon' => 'workflow'],
+        ['route' => 'pengendalian', 'label' => 'Pengendalian',  'icon' => 'folder'],
+        ['route' => 'hirarc',       'label' => 'HIRARC',        'icon' => 'shield'],
+        ['route' => 'template',     'label' => 'Template',      'icon' => 'download'],
     ];
 @endphp
 
@@ -22,7 +22,9 @@
 
         {{-- ── Logo ── --}}
         <a href="{{ route('home') }}" class="navbar__logo" aria-label="SMK3 Docs - Beranda">
-            <div class="navbar__logo-icon" aria-hidden="true">⛑️</div>
+            <div class="navbar__logo-icon">
+                <x-ui-icon name="hard-hat" />
+            </div>
             <span class="navbar__logo-text">SMK3<span> Docs</span></span>
         </a>
 
@@ -35,7 +37,7 @@
                            class="navbar__link {{ $currentRoute === $link['route'] ? 'active' : '' }}"
                            role="menuitem"
                            aria-current="{{ $currentRoute === $link['route'] ? 'page' : 'false' }}">
-                            <span class="link-icon" aria-hidden="true">{{ $link['icon'] }}</span>
+                            <x-ui-icon :name="$link['icon']" class="link-icon" />
                             {{ $link['label'] }}
                         </a>
                     </li>
@@ -48,7 +50,8 @@
                    class="navbar__link navbar__cta {{ $currentRoute === 'template' ? 'active' : '' }}"
                    role="menuitem"
                    id="nav-template-cta">
-                    📥 Template
+                    <x-ui-icon name="download" class="link-icon" />
+                    Template
                 </a>
             </li>
         </ul>

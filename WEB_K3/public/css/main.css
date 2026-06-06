@@ -128,6 +128,13 @@ img {
     display:   block;
 }
 
+.ui-icon {
+    width:  1em;
+    height: 1em;
+    display: inline-block;
+    flex-shrink: 0;
+}
+
 ul, ol {
     list-style: none;
 }
@@ -191,9 +198,18 @@ button {
 }
 
 .hero-mini h1 {
+    display:       flex;
+    align-items:   center;
+    gap:           var(--space-sm);
     color:         var(--putih);
     font-size:     var(--text-3xl);
     margin-bottom: var(--space-sm);
+}
+
+.hero-mini h1 .ui-icon {
+    width:  34px;
+    height: 34px;
+    color:  var(--emas);
 }
 
 .hero-mini p {
@@ -212,8 +228,16 @@ button {
 }
 
 .breadcrumb a {
+    display:     inline-flex;
+    align-items: center;
+    gap:         6px;
     color:       rgba(255,255,255,0.7);
     transition:  color var(--transition-fast);
+}
+
+.breadcrumb .ui-icon {
+    width:  15px;
+    height: 15px;
 }
 
 .breadcrumb a:hover { color: var(--emas); }
@@ -255,6 +279,11 @@ button {
     cursor:         pointer;
     border:         2px solid transparent;
     text-decoration: none;
+}
+
+.btn .ui-icon {
+    width:  18px;
+    height: 18px;
 }
 
 .btn-primary {

@@ -20,19 +20,19 @@ class SmkController extends Controller
         // Data fungsi utama SMK3
         $fungsi = [
             [
-                'icon'        => '📋',
+                'icon'        => 'clipboard',
                 'judul'       => 'Menyatukan Kebijakan & Sasaran K3',
                 'deskripsi'   => 'Dokumentasi SMK3 menjadi wadah penyatuan seluruh kebijakan, tujuan, dan sasaran keselamatan dan kesehatan kerja dalam satu sistem yang terstruktur dan mudah diakses oleh seluruh pemangku kepentingan perusahaan.',
                 'warna'       => 'biru',
             ],
             [
-                'icon'        => '👥',
+                'icon'        => 'users',
                 'judul'       => 'Menjelaskan Peran & Tanggung Jawab',
                 'deskripsi'   => 'Setiap dokumen SMK3 secara eksplisit mendefinisikan peran, wewenang, dan tanggung jawab setiap posisi dalam organisasi terkait pengelolaan K3, memastikan tidak ada celah dalam pelaksanaan program keselamatan.',
                 'warna'       => 'emas',
             ],
             [
-                'icon'        => '✅',
+                'icon'        => 'check-circle',
                 'judul'       => 'Bukti Penerapan SMK3 di Perusahaan',
                 'deskripsi'   => 'Dokumentasi yang lengkap dan terpelihara menjadi bukti nyata komitmen perusahaan dalam menerapkan SMK3 sesuai PP No. 50 Tahun 2012, sekaligus sebagai bahan audit internal maupun eksternal.',
                 'warna'       => 'hijau',
@@ -42,22 +42,22 @@ class SmkController extends Controller
         // Data manfaat dokumentasi SMK3
         $manfaat = [
             [
-                'icon'      => '🔍',
+                'icon'      => 'search',
                 'judul'     => 'Alat Pemahaman Sistem',
                 'deskripsi' => 'Membantu seluruh karyawan memahami sistem K3 yang berlaku di perusahaan secara menyeluruh dan konsisten.',
             ],
             [
-                'icon'      => '📡',
+                'icon'      => 'radio',
                 'judul'     => 'Komunikasi Proses Organisasi',
                 'deskripsi' => 'Menjadi media komunikasi resmi antar departemen dalam hal prosedur, instruksi kerja, dan protokol keselamatan.',
             ],
             [
-                'icon'      => '📊',
+                'icon'      => 'chart',
                 'judul'     => 'Mengukur Efektivitas K3',
                 'deskripsi' => 'Rekaman dan laporan menjadi indikator terukur keberhasilan implementasi program K3 di lapangan.',
             ],
             [
-                'icon'      => '🏆',
+                'icon'      => 'award',
                 'judul'     => 'Dasar Peningkatan Berkelanjutan',
                 'deskripsi' => 'Dokumentasi menjadi referensi untuk evaluasi dan continuous improvement sistem manajemen K3 perusahaan.',
             ],
@@ -65,11 +65,11 @@ class SmkController extends Controller
 
         // Data statistik dummy
         $statistik = [
-            ['angka' => '7',  'label' => 'Modul Pembelajaran',   'icon' => '📚'],
-            ['angka' => '4',  'label' => 'Level Dokumen SMK3',   'icon' => '📂'],
-            ['angka' => '6',  'label' => 'Template Siap Unduh',  'icon' => '📥'],
-            ['angka' => '3',  'label' => 'Jenis Diagram Alir',   'icon' => '🔄'],
-            ['angka' => '5',  'label' => 'Level Pengendalian',   'icon' => '🛡️'],
+            ['angka' => '7',  'label' => 'Modul Pembelajaran',   'icon' => 'book'],
+            ['angka' => '4',  'label' => 'Level Dokumen SMK3',   'icon' => 'layers'],
+            ['angka' => '6',  'label' => 'Template Siap Unduh',  'icon' => 'download'],
+            ['angka' => '3',  'label' => 'Jenis Diagram Alir',   'icon' => 'workflow'],
+            ['angka' => '5',  'label' => 'Level Pengendalian',   'icon' => 'shield'],
         ];
 
         return view('pages.home', compact('fungsi', 'manfaat', 'statistik'));
@@ -182,7 +182,7 @@ class SmkController extends Controller
             [
                 'level'      => 1,
                 'nama'       => 'Manual SMK3',
-                'icon'       => '📘',
+                'icon'       => 'book',
                 'warna'      => '#1a3a5c',
                 'isi'        => 'Kebijakan K3, Tujuan & Sasaran, Struktur Organisasi K3, Ruang Lingkup SMK3',
                 'pengguna'   => 'Manajemen Puncak, Auditor, Regulator',
@@ -192,7 +192,7 @@ class SmkController extends Controller
             [
                 'level'      => 2,
                 'nama'       => 'Prosedur',
-                'icon'       => '📋',
+                'icon'       => 'clipboard',
                 'warna'      => '#2563eb',
                 'isi'        => 'Langkah-langkah sistematis pelaksanaan kegiatan, Penanggung jawab, Referensi',
                 'pengguna'   => 'Manajer, Supervisor, Kepala Departemen',
@@ -202,7 +202,7 @@ class SmkController extends Controller
             [
                 'level'      => 3,
                 'nama'       => 'Instruksi Kerja',
-                'icon'       => '🔧',
+                'icon'       => 'settings',
                 'warna'      => '#f0a500',
                 'isi'        => 'Langkah detail teknis operasional, Spesifikasi teknis, Gambar/foto panduan',
                 'pengguna'   => 'Operator, Teknisi, Pekerja Lapangan',
@@ -212,7 +212,7 @@ class SmkController extends Controller
             [
                 'level'      => 4,
                 'nama'       => 'Rekaman / Formulir',
-                'icon'       => '📁',
+                'icon'       => 'folder',
                 'warna'      => '#10b981',
                 'isi'        => 'Formulir isian, Laporan hasil kegiatan, Log book, Daftar hadir',
                 'pengguna'   => 'Semua Level Karyawan',
@@ -243,7 +243,7 @@ class SmkController extends Controller
                 'nomor'      => '01',
                 'nama'       => 'Diagram Alir Operasi',
                 'subtitle'   => 'Operation Flow Chart',
-                'icon'       => '⚙️',
+                'icon'       => 'settings',
                 'warna'      => '#1a3a5c',
                 'penggunaan' => 'Paling umum digunakan dalam dokumentasi SMK3',
                 'deskripsi'  => 'Diagram yang menggambarkan urutan langkah-langkah operasional suatu proses secara berurutan dari atas ke bawah. Menggunakan simbol standar seperti lingkaran (mulai/selesai), persegi panjang (proses), dan berlian (keputusan).',
@@ -261,7 +261,7 @@ class SmkController extends Controller
                 'nomor'      => '02',
                 'nama'       => 'Diagram Alir Fungsional',
                 'subtitle'   => 'Functional Flow Chart',
-                'icon'       => '👥',
+                'icon'       => 'users',
                 'warna'      => '#7c3aed',
                 'penggunaan' => 'Digunakan saat proses melibatkan banyak departemen atau pihak',
                 'deskripsi'  => 'Diagram yang menampilkan proses beserta fungsi atau penanggung jawab masing-masing langkah. Menggunakan kolom (swim lanes) untuk memisahkan tanggung jawab setiap departemen atau jabatan secara visual.',
@@ -277,7 +277,7 @@ class SmkController extends Controller
                 'nomor'      => '03',
                 'nama'       => 'Diagram Alir Layout',
                 'subtitle'   => 'Layout Flow Chart',
-                'icon'       => '🗺️',
+                'icon'       => 'map',
                 'warna'      => '#059669',
                 'penggunaan' => 'Digunakan untuk hitung waktu proses & diagnosa lalu lintas kerja',
                 'deskripsi'  => 'Diagram yang menggambarkan alur pergerakan orang, material, atau informasi pada denah fisik area kerja. Sangat berguna untuk mengidentifikasi bottleneck, menghitung waktu tempuh, dan mendiagnosa inefisiensi tata letak tempat kerja.',
@@ -368,7 +368,7 @@ class SmkController extends Controller
             [
                 'level'      => 1,
                 'nama'       => 'Eliminasi',
-                'icon'       => '🚫',
+                'icon'       => 'alert-triangle',
                 'warna'      => '#1a3a5c',
                 'lebar_persen'=> 100,
                 'deskripsi'  => 'Menghilangkan bahaya secara permanen dari tempat kerja. Merupakan cara pengendalian PALING efektif.',
@@ -378,7 +378,7 @@ class SmkController extends Controller
             [
                 'level'      => 2,
                 'nama'       => 'Substitusi',
-                'icon'       => '🔄',
+                'icon'       => 'workflow',
                 'warna'      => '#2563eb',
                 'lebar_persen'=> 82,
                 'deskripsi'  => 'Mengganti bahaya dengan sesuatu yang lebih aman atau risiko lebih rendah.',
@@ -388,7 +388,7 @@ class SmkController extends Controller
             [
                 'level'      => 3,
                 'nama'       => 'Rekayasa (Engineering)',
-                'icon'       => '⚙️',
+                'icon'       => 'settings',
                 'warna'      => '#f0a500',
                 'lebar_persen'=> 64,
                 'deskripsi'  => 'Memodifikasi atau mendesain ulang peralatan/mesin/proses untuk mengurangi bahaya.',
@@ -398,7 +398,7 @@ class SmkController extends Controller
             [
                 'level'      => 4,
                 'nama'       => 'Pengendalian Administrasi',
-                'icon'       => '📋',
+                'icon'       => 'clipboard',
                 'warna'      => '#7c3aed',
                 'lebar_persen'=> 46,
                 'deskripsi'  => 'Mengubah cara kerja melalui prosedur, pelatihan, tanda bahaya, dan pembatasan waktu paparan.',
@@ -408,7 +408,7 @@ class SmkController extends Controller
             [
                 'level'      => 5,
                 'nama'       => 'APD (Alat Pelindung Diri)',
-                'icon'       => '⛑️',
+                'icon'       => 'hard-hat',
                 'warna'      => '#ef4444',
                 'lebar_persen'=> 28,
                 'deskripsi'  => 'Melindungi pekerja secara langsung dari bahaya yang tersisa. Upaya terakhir — bukan pertama.',
@@ -507,7 +507,7 @@ class SmkController extends Controller
         $templates = [
             [
                 'id'          => 1,
-                'icon'        => '🚨',
+                'icon'        => 'alert-triangle',
                 'nama'        => 'Formulir Laporan Kecelakaan / Insiden',
                 'nama_file'   => 'FR-K3-001_Laporan_Kecelakaan_Insiden',
                 'deskripsi'   => 'Formulir standar pelaporan kecelakaan dan near-miss di tempat kerja. Mencakup kronologi kejadian, analisis penyebab, dan tindakan perbaikan. Wajib diisi dalam 24 jam setelah kejadian.',
@@ -519,7 +519,7 @@ class SmkController extends Controller
             ],
             [
                 'id'          => 2,
-                'icon'        => '🔍',
+                'icon'        => 'search',
                 'nama'        => 'Lembar Inspeksi & Audit K3',
                 'nama_file'   => 'FR-K3-002_Inspeksi_Audit_K3',
                 'deskripsi'   => 'Checklist komprehensif untuk kegiatan inspeksi rutin dan audit K3. Mencakup penilaian kondisi fisik tempat kerja, kelengkapan APD, rambu K3, dan kondisi peralatan kerja.',
@@ -531,7 +531,7 @@ class SmkController extends Controller
             ],
             [
                 'id'          => 3,
-                'icon'        => '📝',
+                'icon'        => 'edit',
                 'nama'        => 'Daftar Hadir Rapat K3',
                 'nama_file'   => 'FR-K3-003_Daftar_Hadir_Rapat_K3',
                 'deskripsi'   => 'Formulir presensi standar untuk kegiatan rapat K3 rutin, toolbox meeting, safety briefing, dan sesi pelatihan. Dilengkapi kolom tanda tangan dan catatan materi yang disampaikan.',
@@ -543,7 +543,7 @@ class SmkController extends Controller
             ],
             [
                 'id'          => 4,
-                'icon'        => '📄',
+                'icon'        => 'file-text',
                 'nama'        => 'Notulen / MOM Rapat K3',
                 'nama_file'   => 'FR-K3-004_Notulen_Rapat_K3',
                 'deskripsi'   => 'Template Minutes of Meeting (MOM) untuk mendokumentasikan hasil rapat K3. Mencakup poin-poin pembahasan, keputusan, penanggung jawab, dan target penyelesaian setiap action item.',
@@ -555,7 +555,7 @@ class SmkController extends Controller
             ],
             [
                 'id'          => 5,
-                'icon'        => '🩺',
+                'icon'        => 'hospital',
                 'nama'        => 'Formulir Hasil Tes Medis',
                 'nama_file'   => 'FR-K3-005_Hasil_Tes_Medis_Karyawan',
                 'deskripsi'   => 'Template pencatatan hasil pemeriksaan kesehatan berkala karyawan (MCU). Mencakup data vital, hasil laboratorium ringkas, status kesehatan, dan rekomendasi tindak lanjut dari dokter perusahaan.',
@@ -567,7 +567,7 @@ class SmkController extends Controller
             ],
             [
                 'id'          => 6,
-                'icon'        => '🚒',
+                'icon'        => 'truck',
                 'nama'        => 'Jadwal Latihan Tanggap Darurat',
                 'nama_file'   => 'FR-K3-006_Jadwal_Latihan_Tanggap_Darurat',
                 'deskripsi'   => 'Template perencanaan dan dokumentasi latihan kesiapsiagaan darurat (fire drill, evakuasi, pertolongan pertama). Mencakup skenario, jadwal, peserta, evaluator, dan formulir evaluasi pasca latihan.',

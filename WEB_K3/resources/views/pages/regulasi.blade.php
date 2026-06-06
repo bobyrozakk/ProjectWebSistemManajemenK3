@@ -20,11 +20,11 @@
     <div class="container">
         {{-- Breadcrumb --}}
         <nav class="breadcrumb" aria-label="Breadcrumb">
-            <a href="{{ route('home') }}">🏠 Beranda</a>
+            <a href="{{ route('home') }}"><x-ui-icon name="home" /> Beranda</a>
             <span aria-hidden="true">›</span>
             <span class="current" aria-current="page">Dasar Hukum & Regulasi</span>
         </nav>
-        <h1>⚖️ Dasar Hukum & Regulasi SMK3</h1>
+        <h1><x-ui-icon name="scale" /> Dasar Hukum & Regulasi SMK3</h1>
         <p>Landasan hukum nasional dan standar internasional yang mengatur penerapan SMK3 di Indonesia</p>
     </div>
 </header>
@@ -49,13 +49,13 @@
                         <th class="col-ohsas" scope="col">
                             <div class="col-header">
                                 <span>OHSAS 18001</span>
-                                <span class="col-badge col-badge--int">🌐 Internasional</span>
+                                <span class="col-badge col-badge--int"><x-ui-icon name="globe" /> Internasional</span>
                             </div>
                         </th>
                         <th class="col-pp" scope="col">
                             <div class="col-header">
                                 <span>PP No. 50/2012</span>
-                                <span class="col-badge col-badge--nas">🇮🇩 Nasional</span>
+                                <span class="col-badge col-badge--nas">Nasional</span>
                             </div>
                         </th>
                     </tr>

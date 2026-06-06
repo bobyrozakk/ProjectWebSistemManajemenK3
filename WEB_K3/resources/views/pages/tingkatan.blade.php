@@ -19,11 +19,11 @@
 <header class="hero-mini" id="page-hero" aria-label="Header Halaman">
     <div class="container">
         <nav class="breadcrumb" aria-label="Breadcrumb">
-            <a href="{{ route('home') }}">🏠 Beranda</a>
+            <a href="{{ route('home') }}"><x-ui-icon name="home" /> Beranda</a>
             <span>›</span>
             <span class="current" aria-current="page">Level Dokumen SMK3</span>
         </nav>
-        <h1>📚 Level Dokumen SMK3</h1>
+        <h1><x-ui-icon name="layers" /> Level Dokumen SMK3</h1>
         <p>Hierarki 4 level dokumen — dari kebijakan tertinggi hingga rekaman pelaksanaan</p>
     </div>
 </header>
@@ -57,7 +57,7 @@
                          title="{{ $level['deskripsi'] }}"
                          data-level="{{ $level['level'] }}">
                         <div class="pir-level__inner">
-                            <span class="pir-level__icon" aria-hidden="true">{{ $level['icon'] }}</span>
+                            <span class="pir-level__icon"><x-ui-icon :name="$level['icon']" /></span>
                             <div class="pir-level__info">
                                 <div class="pir-level__num">LEVEL {{ $level['level'] }}</div>
                                 <div class="pir-level__name">{{ $level['nama'] }}</div>
@@ -77,7 +77,7 @@
                 @foreach($levels as $level)
                     <article class="level-detail-card" data-level="{{ $level['level'] }}">
                         <div class="level-detail-card__header">
-                            <div class="level-detail-card__badge" aria-hidden="true">{{ $level['icon'] }}</div>
+                            <div class="level-detail-card__badge"><x-ui-icon :name="$level['icon']" /></div>
                             <div class="level-detail-card__title">
                                 <div class="level-detail-card__num">Level {{ $level['level'] }}</div>
                                 <div class="level-detail-card__name">{{ $level['nama'] }}</div>
@@ -88,11 +88,11 @@
 
                         <div class="level-detail-card__meta">
                             <div class="meta-item">
-                                <div class="meta-item__label">📄 Isi Dokumen</div>
+                                <div class="meta-item__label"><x-ui-icon name="file-text" /> Isi Dokumen</div>
                                 <div class="meta-item__val">{{ $level['isi'] }}</div>
                             </div>
                             <div class="meta-item">
-                                <div class="meta-item__label">👤 Pengguna</div>
+                                <div class="meta-item__label"><x-ui-icon name="user" /> Pengguna</div>
                                 <div class="meta-item__val">{{ $level['pengguna'] }}</div>
                             </div>
                         </div>

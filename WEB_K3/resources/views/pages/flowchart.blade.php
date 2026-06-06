@@ -19,11 +19,11 @@
 <header class="hero-mini" id="page-hero" aria-label="Header Halaman">
     <div class="container">
         <nav class="breadcrumb" aria-label="Breadcrumb">
-            <a href="{{ route('home') }}">🏠 Beranda</a>
+            <a href="{{ route('home') }}"><x-ui-icon name="home" /> Beranda</a>
             <span>›</span>
             <span class="current" aria-current="page">Panduan Diagram Alir</span>
         </nav>
-        <h1>🔄 Panduan Diagram Alir Prosedur SMK3</h1>
+        <h1><x-ui-icon name="workflow" /> Panduan Diagram Alir Prosedur SMK3</h1>
         <p>Tiga jenis flowchart yang digunakan dalam dokumentasi prosedur keselamatan kerja</p>
     </div>
 </header>
@@ -50,7 +50,7 @@
                     <div class="fc-card__num" aria-hidden="true">{{ $fc['nomor'] }}</div>
                     <div class="fc-card__head-info">
                         <div class="fc-card__icon-title">
-                            <div class="fc-card__emoji" aria-hidden="true">{{ $fc['icon'] }}</div>
+                            <div class="fc-card__emoji"><x-ui-icon :name="$fc['icon']" /></div>
                             <div>
                                 <h2 class="fc-card__title">{{ $fc['nama'] }}</h2>
                                 <div class="fc-card__subtitle">{{ $fc['subtitle'] }}</div>
@@ -70,7 +70,7 @@
                     <div class="fc-card__left">
                         <p class="fc-card__desc">{{ $fc['deskripsi'] }}</p>
 
-                        <div class="fc-card__kelebihan-title">✅ Kelebihan</div>
+                        <div class="fc-card__kelebihan-title"><x-ui-icon name="check-circle" /> Kelebihan</div>
                         <ul class="fc-card__kelebihan-list">
                             @foreach($fc['kelebihan'] as $lebih)
                                 <li class="fc-card__kelebihan-item">
@@ -81,7 +81,7 @@
                         </ul>
 
                         <div class="fc-card__contoh">
-                            <div class="fc-card__contoh-label">📌 Contoh Penggunaan</div>
+                            <div class="fc-card__contoh-label"><x-ui-icon name="pin" /> Contoh Penggunaan</div>
                             <p>{{ $fc['contoh_penggunaan'] }}</p>
                         </div>
                     </div>
@@ -161,35 +161,35 @@
                             @if($fc['nomor'] === '03')
                                 <div class="flow-layout" aria-label="Simulasi diagram alir layout area kerja">
                                     <div style="font-size:var(--text-xs); font-weight:700; color:var(--biru-tua); margin-bottom:var(--space-sm); text-align:center;">
-                                        📐 Denah Area Produksi (Skematik)
+                                        Denah Area Produksi (Skematik)
                                     </div>
                                     <div class="layout-area">
                                         <div class="layout-pos" style="background:#1a3a5c; font-size:0.55rem; color:#fff; text-shadow:0 1px 2px rgba(0,0,0,0.6);">
-                                            🏭<br>Gudang Bahan Baku
+                                            Gudang Bahan Baku
                                         </div>
                                         <div class="layout-pos" style="background:#059669; font-size:0.55rem; color:#fff; text-shadow:0 1px 2px rgba(0,0,0,0.5);">
-                                            🚒<br>APAR &amp; P3K
+                                            APAR &amp; P3K
                                         </div>
                                         <div class="layout-pos" style="background:#2563eb; font-size:0.55rem; color:#fff; text-shadow:0 1px 2px rgba(0,0,0,0.5);">
-                                            🚪<br>Pintu Masuk
+                                            Pintu Masuk
                                         </div>
                                         <div class="layout-pos" style="background:#f0a500; font-size:0.55rem; color:#111; font-weight:800;">
-                                            ⚙️<br>Area Produksi
+                                            Area Produksi
                                         </div>
                                         <div class="layout-pos" style="background:#ef4444; font-size:0.55rem; color:#fff; text-shadow:0 1px 2px rgba(0,0,0,0.5);">
-                                            🚧<br>Zona Bahaya
+                                            Zona Bahaya
                                         </div>
                                         <div class="layout-pos" style="background:#059669; font-size:0.55rem; color:#fff; text-shadow:0 1px 2px rgba(0,0,0,0.5);">
-                                            🏥<br>Klinik K3
+                                            Klinik K3
                                         </div>
                                         <div class="layout-pos" style="background:#7c3aed; font-size:0.55rem; color:#fff; text-shadow:0 1px 2px rgba(0,0,0,0.5);">
-                                            📦<br>Gudang APD
+                                            Gudang APD
                                         </div>
                                         <div class="layout-pos" style="background:#1a3a5c; font-size:0.55rem; color:#fff; text-shadow:0 1px 2px rgba(0,0,0,0.6);">
-                                            🖥️<br>Ruang Kontrol
+                                            Ruang Kontrol
                                         </div>
                                         <div class="layout-pos" style="background:#2563eb; font-size:0.55rem; color:#fff; text-shadow:0 1px 2px rgba(0,0,0,0.5);">
-                                            🚪<br>Pintu Keluar
+                                            Pintu Keluar
                                         </div>
                                     </div>
                                     <div style="font-size:0.6rem; color:var(--abu-tua); text-align:center; margin-top:8px;">

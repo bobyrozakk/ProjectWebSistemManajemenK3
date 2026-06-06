@@ -6,7 +6,9 @@
 /* ── Hero Section ─────────────────────────────────────────────────── */
 .hero {
     min-height:     calc(100vh - var(--navbar-height));
-    background:     var(--gradient-hero);
+    background:
+        linear-gradient(90deg, rgba(10,25,47,0.96) 0%, rgba(26,58,92,0.84) 42%, rgba(26,58,92,0.46) 100%),
+        url('../images/sistem-manajemen-k3-pada-proyek-konstruksi.jpg') center/cover no-repeat;
     display:        flex;
     align-items:    center;
     position:       relative;
@@ -14,37 +16,40 @@
     padding:        var(--space-4xl) 0;
 }
 
+.hero::after {
+    content:  '';
+    position: absolute;
+    inset:    auto 0 0 0;
+    height:   180px;
+    background: linear-gradient(180deg, transparent 0%, rgba(10,25,47,0.72) 100%);
+    pointer-events: none;
+}
+
 /* Lingkaran dekorasi hero */
 .hero__decor-1 {
     position:      absolute;
-    top:           10%;
-    right:         8%;
-    width:         420px;
-    height:        420px;
-    background:    radial-gradient(circle, rgba(240,165,0,0.12) 0%, transparent 70%);
-    border-radius: 50%;
-    animation:     float 6s ease-in-out infinite;
+    top:           0;
+    right:         0;
+    width:         48%;
+    height:        100%;
+    background:    linear-gradient(90deg, transparent 0%, rgba(240,165,0,0.08) 100%);
+    animation:     none;
 }
 
 .hero__decor-2 {
     position:      absolute;
-    bottom:        5%;
-    left:          3%;
-    width:         280px;
-    height:        280px;
-    background:    radial-gradient(circle, rgba(37,99,235,0.18) 0%, transparent 70%);
-    border-radius: 50%;
-    animation:     float 8s ease-in-out infinite reverse;
+    bottom:        0;
+    left:          0;
+    width:         100%;
+    height:        1px;
+    background:    linear-gradient(90deg, transparent, rgba(240,165,0,0.7), transparent);
+    animation:     none;
 }
 
 .hero__decor-3 {
     position:      absolute;
-    top:           40%;
-    left:          50%;
-    width:         200px;
-    height:        200px;
-    background:    radial-gradient(circle, rgba(240,165,0,0.06) 0%, transparent 70%);
-    border-radius: 50%;
+    inset:         0;
+    background:    linear-gradient(180deg, rgba(255,255,255,0.04), transparent 32%);
 }
 
 /* Grid hero: teks kiri + visual kanan */
@@ -73,6 +78,12 @@
     margin-bottom:  var(--space-xl);
 }
 
+.hero__eyebrow-icon {
+    width:  18px;
+    height: 18px;
+    color:  var(--emas);
+}
+
 .hero__eyebrow span {
     font-size:      var(--text-sm);
     font-weight:    600;
@@ -87,7 +98,7 @@
     color:         var(--putih);
     line-height:   1.1;
     margin-bottom: var(--space-lg);
-    letter-spacing: -0.02em;
+    letter-spacing: 0;
 }
 
 .hero__title .highlight {
@@ -153,12 +164,13 @@
 /* Kartu floating di hero */
 .hero__float-card {
     position:      absolute;
-    background:    rgba(255,255,255,0.06);
-    backdrop-filter: blur(12px);
-    border:        1px solid rgba(255,255,255,0.12);
-    border-radius: var(--radius-lg);
+    background:    rgba(10,25,47,0.62);
+    backdrop-filter: blur(16px);
+    border:        1px solid rgba(255,255,255,0.18);
+    border-radius: var(--radius-md);
     padding:       var(--space-lg);
     animation:     float 5s ease-in-out infinite;
+    box-shadow:    0 18px 42px rgba(0,0,0,0.24);
 }
 
 .hero__float-card--main {
@@ -199,7 +211,9 @@
 .hero__stat-row:last-child { margin-bottom: 0; }
 
 .hero__stat-icon {
-    font-size:  1.4rem;
+    width:  24px;
+    height: 24px;
+    color:  var(--emas);
 }
 
 .hero__stat-label {
@@ -214,7 +228,12 @@
     color:       var(--putih);
 }
 
-.hero__mini-icon { font-size: 1.8rem; margin-bottom: var(--space-xs); }
+.hero__mini-icon {
+    width:  30px;
+    height: 30px;
+    color:  var(--emas);
+    margin: 0 auto var(--space-xs);
+}
 
 .hero__mini-label {
     font-size:   var(--text-xs);
@@ -261,9 +280,11 @@
 .stat-item:last-child { border-right: none; }
 
 .stat-item__icon {
-    font-size:     2rem;
+    width:         34px;
+    height:        34px;
+    color:         rgba(255,255,255,0.78);
     margin-bottom: var(--space-sm);
-    display:       block;
+    display:       inline-block;
 }
 
 .stat-item__number {
@@ -336,19 +357,27 @@
     display:         flex;
     align-items:     center;
     justify-content: center;
-    font-size:       1.8rem;
+    font-size:       1.9rem;
     margin-bottom:   var(--space-lg);
     flex-shrink:     0;
 }
 
+.fungsi-card__icon-wrap .ui-icon {
+    width:  32px;
+    height: 32px;
+}
+
 .fungsi-card.biru .fungsi-card__icon-wrap {
     background:  rgba(26,58,92,0.1);
+    color:       var(--biru-tua);
 }
 .fungsi-card.emas .fungsi-card__icon-wrap {
     background:  rgba(240,165,0,0.12);
+    color:       #b07a00;
 }
 .fungsi-card.hijau .fungsi-card__icon-wrap {
     background:  rgba(16,185,129,0.1);
+    color:       #059669;
 }
 
 .fungsi-card h3 {
@@ -392,7 +421,6 @@
 }
 
 .manfaat-card__icon {
-    font-size:       1.8rem;
     width:           52px;
     height:          52px;
     border-radius:   var(--radius-md);
@@ -401,6 +429,12 @@
     align-items:     center;
     justify-content: center;
     flex-shrink:     0;
+    color:           #b07a00;
+}
+
+.manfaat-card__icon .ui-icon {
+    width:  26px;
+    height: 26px;
 }
 
 .manfaat-card__body h4 {

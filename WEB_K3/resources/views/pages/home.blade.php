@@ -31,7 +31,7 @@
             <div class="hero__content">
                 {{-- Eyebrow label --}}
                 <div class="hero__eyebrow">
-                    <span>⛑️</span>
+                    <x-ui-icon name="hard-hat" class="hero__eyebrow-icon" />
                     <span>Mata Kuliah Keselamatan & Kesehatan Kerja</span>
                 </div>
 
@@ -52,10 +52,12 @@
                 {{-- Tombol CTA --}}
                 <div class="hero__actions">
                     <a href="{{ route('regulasi') }}" class="btn btn-primary" id="cta-pelajari">
-                        📖 Pelajari Lebih Lanjut
+                        <x-ui-icon name="book" />
+                        Pelajari Lebih Lanjut
                     </a>
                     <a href="{{ route('template') }}" class="btn btn-secondary" id="cta-template">
-                        📥 Unduh Template
+                        <x-ui-icon name="download" />
+                        Unduh Template
                     </a>
                 </div>
 
@@ -85,7 +87,7 @@
                 <div class="hero__card-stack">
                     {{-- Kartu info kecil kiri atas --}}
                     <div class="hero__float-card hero__float-card--info">
-                        <div class="hero__mini-icon">📚</div>
+                        <x-ui-icon name="book" class="hero__mini-icon" />
                         <div class="hero__mini-label">Modul</div>
                         <div class="hero__mini-val">7</div>
                     </div>
@@ -93,21 +95,21 @@
                     {{-- Kartu utama tengah --}}
                     <div class="hero__float-card hero__float-card--main">
                         <div class="hero__stat-row">
-                            <span class="hero__stat-icon">📋</span>
+                            <x-ui-icon name="clipboard" class="hero__stat-icon" />
                             <div>
                                 <div class="hero__stat-label">Regulasi K3</div>
                                 <div class="hero__stat-val">PP No. 50/2012</div>
                             </div>
                         </div>
                         <div class="hero__stat-row">
-                            <span class="hero__stat-icon">🏆</span>
+                            <x-ui-icon name="award" class="hero__stat-icon" />
                             <div>
                                 <div class="hero__stat-label">Standar Internasional</div>
                                 <div class="hero__stat-val">ISO 45001:2018</div>
                             </div>
                         </div>
                         <div class="hero__stat-row">
-                            <span class="hero__stat-icon">🛡️</span>
+                            <x-ui-icon name="shield" class="hero__stat-icon" />
                             <div>
                                 <div class="hero__stat-label">Pengendalian Risiko</div>
                                 <div class="hero__stat-val">5 Hierarki</div>
@@ -117,7 +119,7 @@
 
                     {{-- Kartu kecil kanan bawah --}}
                     <div class="hero__float-card hero__float-card--badge">
-                        <div class="hero__mini-icon">⚡</div>
+                        <x-ui-icon name="zap" class="hero__mini-icon" />
                         <div class="hero__mini-label">Template</div>
                         <div class="hero__mini-val">6+</div>
                     </div>
@@ -136,7 +138,7 @@
         <div class="stats-grid">
             @foreach($statistik as $stat)
                 <div class="stat-item">
-                    <span class="stat-item__icon" aria-hidden="true">{{ $stat['icon'] }}</span>
+                    <x-ui-icon :name="$stat['icon']" class="stat-item__icon" />
                     <span class="stat-item__number"
                           data-count="{{ $stat['angka'] }}"
                           aria-label="{{ $stat['angka'] }} {{ $stat['label'] }}">
@@ -169,8 +171,8 @@
         <div class="fungsi-grid">
             @foreach($fungsi as $item)
                 <article class="fungsi-card {{ $item['warna'] }}">
-                    <div class="fungsi-card__icon-wrap" aria-hidden="true">
-                        {{ $item['icon'] }}
+                    <div class="fungsi-card__icon-wrap">
+                        <x-ui-icon :name="$item['icon']" />
                     </div>
                     <h3>{{ $item['judul'] }}</h3>
                     <p>{{ $item['deskripsi'] }}</p>
@@ -199,7 +201,9 @@
         <div class="manfaat-grid">
             @foreach($manfaat as $item)
                 <article class="manfaat-card">
-                    <div class="manfaat-card__icon" aria-hidden="true">{{ $item['icon'] }}</div>
+                    <div class="manfaat-card__icon">
+                        <x-ui-icon :name="$item['icon']" />
+                    </div>
                     <div class="manfaat-card__body">
                         <h4>{{ $item['judul'] }}</h4>
                         <p>{{ $item['deskripsi'] }}</p>
@@ -223,10 +227,12 @@
         </p>
         <div class="cta-banner__actions">
             <a href="{{ route('tingkatan') }}" class="btn btn-primary" id="cta-mulai">
-                🚀 Mulai dari Level Dokumen
+                <x-ui-icon name="rocket" />
+                Mulai dari Level Dokumen
             </a>
             <a href="{{ route('hirarc') }}" class="btn btn-secondary" id="cta-hirarc">
-                🛡️ Pelajari HIRARC
+                <x-ui-icon name="shield" />
+                Pelajari HIRARC
             </a>
         </div>
     </div>

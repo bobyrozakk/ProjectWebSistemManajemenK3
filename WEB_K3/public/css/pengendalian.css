@@ -25,11 +25,20 @@
 }
 
 .checklist-box__title {
+    display:        flex;
+    align-items:    center;
+    gap:            var(--space-sm);
     font-family:    var(--font-heading);
     font-size:      var(--text-xl);
     font-weight:    700;
     color:          var(--biru-tua);
     margin-bottom:  var(--space-xs);
+}
+
+.checklist-box__title .ui-icon {
+    width:  24px;
+    height: 24px;
+    color:  var(--emas);
 }
 
 .checklist-box__sub {
@@ -164,6 +173,11 @@
     display:       flex;
     align-items:   center;
     gap:           var(--space-sm);
+}
+
+.info-card__title .ui-icon {
+    width:  18px;
+    height: 18px;
 }
 
 .info-card__text {
@@ -321,7 +335,7 @@
 }
 
 .usang-box::before {
-    content:    '⚠';
+    content:    '!';
     position:   absolute;
     top:        -20px;
     right:      20px;
@@ -338,7 +352,9 @@
 }
 
 .usang-box__icon {
-    font-size:   2rem;
+    width:       34px;
+    height:      34px;
+    color:       #b45309;
     flex-shrink: 0;
 }
 

@@ -19,11 +19,11 @@
 <header class="hero-mini" id="page-hero" aria-label="Header Halaman">
     <div class="container">
         <nav class="breadcrumb" aria-label="Breadcrumb">
-            <a href="{{ route('home') }}">🏠 Beranda</a>
+            <a href="{{ route('home') }}"><x-ui-icon name="home" /> Beranda</a>
             <span>›</span>
             <span class="current" aria-current="page">Pusat Unduhan Template</span>
         </nav>
-        <h1>📥 Pusat Unduhan Template SMK3</h1>
+        <h1><x-ui-icon name="download" /> Pusat Unduhan Template SMK3</h1>
         <p>6 template K3 siap pakai untuk kebutuhan dokumentasi dan akademik Anda</p>
     </div>
 </header>
@@ -49,8 +49,8 @@
 
                     {{-- Header --}}
                     <div class="template-card__header">
-                        <div class="template-card__icon-wrap" aria-hidden="true">
-                            {{ $tmpl['icon'] }}
+                        <div class="template-card__icon-wrap">
+                            <x-ui-icon :name="$tmpl['icon']" />
                         </div>
                         <div class="template-card__head-info">
                             <div class="template-card__kategori">{{ $tmpl['kategori'] }}</div>
@@ -67,13 +67,13 @@
                     <div class="template-card__meta">
                         <span class="meta-badge format-{{ strtolower($tmpl['format']) }}"
                               aria-label="Format file {{ $tmpl['format'] }}">
-                            📄 {{ $tmpl['format'] }}
+                            <x-ui-icon name="file-text" /> {{ $tmpl['format'] }}
                         </span>
                         <span class="meta-badge meta-badge--size">
-                            💾 {{ $tmpl['ukuran'] }}
+                            {{ $tmpl['ukuran'] }}
                         </span>
                         <span class="meta-badge meta-badge--revisi">
-                            🔄 {{ $tmpl['revisi'] }}
+                            <x-ui-icon name="workflow" /> {{ $tmpl['revisi'] }}
                         </span>
                     </div>
 
@@ -86,7 +86,8 @@
                            aria-label="Unduh template {{ $tmpl['nama'] }} format {{ $tmpl['format'] }}"
                            onclick="handleUnduh(event, '{{ $tmpl['nama_file'] }}', '{{ $tmpl['format'] }}')">
                             <span class="format-dot" aria-hidden="true"></span>
-                            <span>⬇ Unduh Template</span>
+                            <x-ui-icon name="download" />
+                            <span>Unduh Template</span>
                             <span class="unduh-arrow" aria-hidden="true">↓</span>
                         </a>
                     </div>
@@ -97,9 +98,9 @@
 
         {{-- Banner Disclaimer --}}
         <div class="disclaimer-banner" role="note" aria-label="Pernyataan disclaimer">
-            <span class="disclaimer-banner__icon" aria-hidden="true">📚</span>
+            <x-ui-icon name="book" class="disclaimer-banner__icon" />
             <div class="disclaimer-banner__text">
-                <div class="disclaimer-banner__title">⚠️ Catatan Penting — Disclaimer Akademik</div>
+                <div class="disclaimer-banner__title"><x-ui-icon name="alert-triangle" /> Catatan Penting - Disclaimer Akademik</div>
                 <div class="disclaimer-banner__desc">
                     Semua template di halaman ini bersifat <strong>edukatif untuk keperluan akademik</strong> semata.
                     Template tidak mengandung file asli yang dapat diunduh. Gunakan sebagai referensi
@@ -108,7 +109,7 @@
                 </div>
             </div>
             <div class="disclaimer-banner__badge" aria-hidden="true">
-                📋 Tujuan Akademik
+                Tujuan Akademik
             </div>
         </div>
 
@@ -130,28 +131,28 @@
         <div class="cara-grid">
             <div class="cara-card">
                 <div class="cara-card__num" aria-hidden="true">1</div>
-                <span class="cara-card__icon" aria-hidden="true">📥</span>
+                <x-ui-icon name="download" class="cara-card__icon" />
                 <h4>Unduh Template</h4>
                 <p>Pilih template yang sesuai kebutuhan dan klik tombol "Unduh Template".</p>
             </div>
 
             <div class="cara-card">
                 <div class="cara-card__num" aria-hidden="true">2</div>
-                <span class="cara-card__icon" aria-hidden="true">✏️</span>
+                <x-ui-icon name="edit" class="cara-card__icon" />
                 <h4>Sesuaikan Konten</h4>
                 <p>Edit header, logo perusahaan, nomor dokumen, dan konten sesuai organisasi Anda.</p>
             </div>
 
             <div class="cara-card">
                 <div class="cara-card__num" aria-hidden="true">3</div>
-                <span class="cara-card__icon" aria-hidden="true">✅</span>
+                <x-ui-icon name="check-circle" class="cara-card__icon" />
                 <h4>Dapatkan Persetujuan</h4>
                 <p>Ajukan ke supervisor atau manajemen untuk review dan tanda tangan persetujuan.</p>
             </div>
 
             <div class="cara-card">
                 <div class="cara-card__num" aria-hidden="true">4</div>
-                <span class="cara-card__icon" aria-hidden="true">📂</span>
+                <x-ui-icon name="folder" class="cara-card__icon" />
                 <h4>Distribusi & Arsip</h4>
                 <p>Distribusikan dokumen yang telah disetujui dan simpan dalam sistem pengarsipan K3.</p>
             </div>
@@ -174,12 +175,12 @@
 
         // Feedback visual
         const originalText = btn.innerHTML;
-        btn.innerHTML = '⏳ Mempersiapkan...';
+        btn.textContent = 'Mempersiapkan...';
         btn.style.opacity = '0.7';
         btn.style.cursor  = 'wait';
 
         setTimeout(() => {
-            btn.innerHTML = '✅ Simulasi Berhasil!';
+            btn.textContent = 'Simulasi Berhasil!';
             btn.style.background = '#059669';
             btn.style.opacity    = '1';
             btn.style.cursor     = 'pointer';

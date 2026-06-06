@@ -19,11 +19,11 @@
 <header class="hero-mini" id="page-hero" aria-label="Header Halaman">
     <div class="container">
         <nav class="breadcrumb" aria-label="Breadcrumb">
-            <a href="{{ route('home') }}">🏠 Beranda</a>
+            <a href="{{ route('home') }}"><x-ui-icon name="home" /> Beranda</a>
             <span>›</span>
             <span class="current" aria-current="page">Manajemen Risiko & HIRARC</span>
         </nav>
-        <h1>🛡️ Manajemen Risiko & HIRARC</h1>
+        <h1><x-ui-icon name="shield" /> Manajemen Risiko & HIRARC</h1>
         <p>Hazard Identification, Risk Assessment, and Risk Control — fondasi pengendalian bahaya K3</p>
     </div>
 </header>
@@ -57,7 +57,7 @@
                          tabindex="0"
                          aria-label="Level {{ $item['level'] }}: {{ $item['nama'] }} — {{ $item['deskripsi'] }}"
                          data-level="{{ $item['level'] }}">
-                        <span class="inv-level__icon" aria-hidden="true">{{ $item['icon'] }}</span>
+                        <span class="inv-level__icon"><x-ui-icon :name="$item['icon']" /></span>
                         <div class="inv-level__text">
                             <div class="inv-level__name">{{ $item['nama'] }}</div>
                             <div class="inv-level__sub">Efektivitas: {{ $item['efektivitas'] }}</div>
@@ -76,7 +76,7 @@
                     <article class="hierarki-card" data-level="{{ $item['level'] }}"
                              style="border-left-color: {{ $item['warna'] }};">
                         <div class="hierarki-card__header">
-                            <span class="hierarki-card__icon" aria-hidden="true">{{ $item['icon'] }}</span>
+                            <span class="hierarki-card__icon"><x-ui-icon :name="$item['icon']" /></span>
                             <div class="hierarki-card__info">
                                 <div class="hierarki-card__level">Level {{ $item['level'] }}</div>
                                 <div class="hierarki-card__name">{{ $item['nama'] }}</div>

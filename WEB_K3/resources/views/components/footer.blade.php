@@ -12,7 +12,9 @@
             {{-- Kolom 1: About --}}
             <div class="footer__col">
                 <div class="footer__brand">
-                    <div class="footer__brand-icon" aria-hidden="true">⛑️</div>
+                    <div class="footer__brand-icon">
+                        <x-ui-icon name="hard-hat" />
+                    </div>
                     <span class="footer__brand-name">SMK3<span> Docs</span></span>
                 </div>
 
@@ -23,9 +25,9 @@
                 </p>
 
                 <div class="footer__badges">
-                    <span class="footer__badge">📋 PP No. 50/2012</span>
-                    <span class="footer__badge">🌐 OHSAS 18001</span>
-                    <span class="footer__badge">⚙️ ISO 45001</span>
+                    <span class="footer__badge"><x-ui-icon name="clipboard" /> PP No. 50/2012</span>
+                    <span class="footer__badge"><x-ui-icon name="globe" /> OHSAS 18001</span>
+                    <span class="footer__badge"><x-ui-icon name="shield" /> ISO 45001</span>
                 </div>
             </div>
 
@@ -85,7 +87,7 @@
                 <h3 class="footer__col-title">Informasi</h3>
 
                 <div class="footer__contact-item">
-                    <span class="footer__contact-icon" aria-hidden="true">🏛️</span>
+                    <x-ui-icon name="building" class="footer__contact-icon" />
                     <div class="footer__contact-text">
                         <strong>Universitas</strong>
                         Politeknik Negeri Malang
@@ -93,7 +95,7 @@
                 </div>
 
                 <div class="footer__contact-item">
-                    <span class="footer__contact-icon" aria-hidden="true">📚</span>
+                    <x-ui-icon name="book" class="footer__contact-icon" />
                     <div class="footer__contact-text">
                         <strong>Mata Kuliah</strong>
                         K3 — Keselamatan dan Kesehatan Kerja
@@ -101,7 +103,7 @@
                 </div>
 
                 <div class="footer__contact-item">
-                    <span class="footer__contact-icon" aria-hidden="true">👨‍🏫</span>
+                    <x-ui-icon name="graduation" class="footer__contact-icon" />
                     <div class="footer__contact-text">
                         <strong>Dosen Pembimbing</strong>
                         Titis Octary Satrio
@@ -109,7 +111,7 @@
                 </div>
 
                 <div class="footer__contact-item">
-                    <span class="footer__contact-icon" aria-hidden="true">📅</span>
+                    <x-ui-icon name="calendar" class="footer__contact-icon" />
                     <div class="footer__contact-text">
                         <strong>Semester</strong>
                         Genap 2025/2026
@@ -117,7 +119,7 @@
                 </div>
 
                 <div class="footer__contact-item">
-                    <span class="footer__contact-icon" aria-hidden="true">🏢</span>
+                    <x-ui-icon name="briefcase" class="footer__contact-icon" />
                     <div class="footer__contact-text">
                         <strong>SIB2E</strong>
                         Kelompok 3 (Buildmatch)

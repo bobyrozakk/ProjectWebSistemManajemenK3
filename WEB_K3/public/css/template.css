@@ -64,19 +64,26 @@
     display:         flex;
     align-items:     center;
     justify-content: center;
-    font-size:       1.6rem;
     flex-shrink:     0;
     position:        relative;
 }
 
+.template-card__icon-wrap .ui-icon {
+    width:  28px;
+    height: 28px;
+}
+
 .template-card.format-docx .template-card__icon-wrap {
     background: rgba(37,99,235,0.1);
+    color:      var(--biru-muda);
 }
 .template-card.format-xlsx .template-card__icon-wrap {
     background: rgba(5,150,105,0.1);
+    color:      #059669;
 }
 .template-card.format-pdf .template-card__icon-wrap {
     background: rgba(239,68,68,0.1);
+    color:      #dc2626;
 }
 
 .template-card__head-info {
@@ -133,6 +140,11 @@
     font-weight:    600;
 }
 
+.meta-badge .ui-icon {
+    width:  13px;
+    height: 13px;
+}
+
 /* Badge Format */
 .meta-badge.format-docx { background: rgba(37,99,235,0.1);  color: var(--biru-muda); }
 .meta-badge.format-xlsx { background: rgba(5,150,105,0.1);  color: #059669; }
@@ -184,6 +196,11 @@
     transform: translateY(2px);
 }
 
+.btn-unduh .ui-icon {
+    width:  17px;
+    height: 17px;
+}
+
 .unduh-arrow {
     transition: transform var(--transition-fast);
 }
@@ -215,7 +232,9 @@
 }
 
 .disclaimer-banner__icon {
-    font-size:   2.5rem;
+    width:       42px;
+    height:      42px;
+    color:       var(--emas);
     flex-shrink: 0;
 }
 
@@ -224,11 +243,19 @@
 }
 
 .disclaimer-banner__title {
+    display:       flex;
+    align-items:   center;
+    gap:           var(--space-sm);
     font-family:   var(--font-heading);
     font-size:     var(--text-lg);
     font-weight:   700;
     color:         var(--emas);
     margin-bottom: var(--space-xs);
+}
+
+.disclaimer-banner__title .ui-icon {
+    width:  20px;
+    height: 20px;
 }
 
 .disclaimer-banner__desc {
@@ -290,9 +317,11 @@
 }
 
 .cara-card__icon {
-    font-size:     2rem;
+    width:         32px;
+    height:        32px;
+    color:         var(--emas);
     margin-bottom: var(--space-md);
-    display:       block;
+    display:       inline-block;
     position:      relative;
     z-index:       1;
 }

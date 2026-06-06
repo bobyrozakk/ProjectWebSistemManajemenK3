@@ -19,11 +19,11 @@
 <header class="hero-mini" id="page-hero" aria-label="Header Halaman">
     <div class="container">
         <nav class="breadcrumb" aria-label="Breadcrumb">
-            <a href="{{ route('home') }}">🏠 Beranda</a>
+            <a href="{{ route('home') }}"><x-ui-icon name="home" /> Beranda</a>
             <span>›</span>
             <span class="current" aria-current="page">Pengendalian Dokumen</span>
         </nav>
-        <h1>🗂️ Protokol Pengendalian Dokumen SMK3</h1>
+        <h1><x-ui-icon name="folder" /> Protokol Pengendalian Dokumen SMK3</h1>
         <p>Standar minimum, status dokumen, dan aturan pengelolaan dokumen yang terkendali</p>
     </div>
 </header>
@@ -45,7 +45,7 @@
             {{-- ── Checklist Interaktif ── --}}
             <div>
                 <div class="checklist-box">
-                    <h3 class="checklist-box__title">📋 Daftar Periksa Dokumen</h3>
+                    <h3 class="checklist-box__title"><x-ui-icon name="clipboard" /> <span>Daftar Periksa Dokumen</span></h3>
                     <p class="checklist-box__sub">Centang item berikut untuk memverifikasi kelengkapan dokumen Anda.</p>
 
                     <div role="list">
@@ -77,7 +77,7 @@
 
                 {{-- Format Penomoran Dokumen --}}
                 <div class="info-card">
-                    <div class="info-card__title">📌 Format Penomoran Dokumen</div>
+                    <div class="info-card__title"><x-ui-icon name="pin" /> Format Penomoran Dokumen</div>
                     <p class="info-card__text">
                         Sistem penomoran dokumen yang konsisten memudahkan pelacakan dan pengendalian.
                         Gunakan format hierarki yang mencerminkan struktur organisasi dan jenis dokumen.
@@ -94,7 +94,7 @@
 
                 {{-- Tips Praktis --}}
                 <div class="info-card" style="background: linear-gradient(135deg, #064e3b, #059669);">
-                    <div class="info-card__title">💡 Tips Praktis</div>
+                    <div class="info-card__title"><x-ui-icon name="check-circle" /> Tips Praktis</div>
                     <p class="info-card__text">
                         Simpan master dokumen di lokasi terpusat dan gunakan sistem manajemen dokumen elektronik
                         untuk memudahkan distribusi, tracking revisi, dan audit trail.
@@ -166,7 +166,7 @@
 
         <div class="usang-box" role="alert">
             <div class="usang-box__header">
-                <span class="usang-box__icon" aria-hidden="true">⚠️</span>
+                <x-ui-icon name="alert-triangle" class="usang-box__icon" />
                 <div>
                     <div class="usang-box__title" id="usang-heading">Prosedur Penanganan Dokumen Usang</div>
                     <div class="usang-box__subtitle">Wajib diikuti setelah penerbitan revisi baru dokumen manapun</div>
@@ -201,7 +201,7 @@
             // Update label judul checklist
             const title = document.querySelector('.checklist-box__title');
             if (title) {
-                title.textContent = `📋 Daftar Periksa Dokumen (${checked}/${total})`;
+                title.innerHTML = `<svg class="ui-icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="14" height="18" x="5" y="4" rx="2"></rect><path d="M9 4a3 3 0 0 1 6 0"></path><path d="M9 12h6"></path><path d="M9 16h6"></path></svg><span>Daftar Periksa Dokumen (${checked}/${total})</span>`;
             }
         });
     });
