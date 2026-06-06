@@ -1,20 +1,21 @@
 {
-    "version": 2,
-    "buildCommand": "echo 'skip'",
-    "framework": null,
-    "functions": {
-        "public/index.php": {
-            "runtime": "vercel-php@0.7"
-        }
+  "version": 2,
+  "buildCommand": "echo 'skip'",
+  "outputDirectory": "public",
+  "framework": null,
+  "functions": {
+    "public/index.php": {
+      "runtime": "vercel-php@0.7"
+    }
+  },
+  "routes": [
+    {
+      "src": "/build/(.*)",
+      "dest": "/public/build/$1"
     },
-    "routes": [
-        {
-            "src": "/build/(.*)",
-            "dest": "/public/build/$1"
-        },
-        {
-            "src": "/(.*)",
-            "dest": "/public/index.php"
-        }
-    ]
+    {
+      "src": "/(.*)",
+      "dest": "/public/index.php"
+    }
+  ]
 }
