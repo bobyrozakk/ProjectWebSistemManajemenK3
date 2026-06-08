@@ -22,3 +22,5 @@ yarn-error.log
 /.nova
 /.vscode
 /.zed
+cat .gitignore | grep -i api
+# Kalau ada output /api atau api/ → itu penyebabnya
