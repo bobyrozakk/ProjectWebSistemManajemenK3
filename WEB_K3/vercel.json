@@ -1,20 +1,18 @@
 {
     "version": 2,
+    "outputDirectory": "public",
+    "buildCommand": "echo 'skip'",
     "functions": {
         "api/index.php": { "runtime": "vercel-php@0.7.3" }
     },
     "routes": [
         {
-            "src": "/build/assets/(.*)",
-            "dest": "/public/build/assets/$1"
-        },
-        {
-            "src": "/build/manifest.json",
-            "dest": "/public/build/manifest.json"
+            "src": "/build/(.*)",
+            "dest": "/build/$1"
         },
         {
             "src": "/favicon.ico",
-            "dest": "/public/favicon.ico"
+            "dest": "/favicon.ico"
         },
         {
             "src": "/(.*)",
