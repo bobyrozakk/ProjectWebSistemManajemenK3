@@ -1,6 +1,5 @@
 <?php
 
-// 1. Buat direktori sementara di Vercel jika belum ada
 $tmpDirs = [
     '/tmp/storage/app/public',
     '/tmp/storage/framework/cache/data',
@@ -16,33 +15,25 @@ foreach ($tmpDirs as $dir) {
     }
 }
 
-// 2. Paksa Laravel agar log & view dialihkan ke /tmp dan stderr
 putenv('LOG_CHANNEL=stderr');
 putenv('VIEW_COMPILED_PATH=/tmp/storage/framework/views');
 
-try {
-    // 3. Muat file pembangun inti Laravel
-    require __DIR__.'/../vendor/autoload.php';
-    $app = require_once __DIR__.'/../bootstrap/app.php';
+// PAKSA HTTPS
+if (isset($_SERVER['HTTP_X_FORWARDED_PROTO']) && $_SERVER['HTTP_X_FORWARDED_PROTO'] === 'https') {
+    $_SERVER['HTTPS'] = 'on';
+}
+$_SERVER['HTTPS'] = 'on';
 
-    // 4. PENTING: Belokkan folder penyimpanan ke /tmp
-    $app->useStoragePath('/tmp/storage');
+require __DIR__.'/../vendor/autoload.php';
+$app = require_once __DIR__.'/../bootstrap/app.php';
+$app->useStoragePath('/tmp/storage');
 
-    // 5. Jalankan aplikasi (Mendukung Laravel 10 & 11)
-    if (method_exists($app, 'handleRequest')) {
-        $app->handleRequest(Illuminate\Http\Request::capture());
-    } else {
-        $kernel = $app->make(Illuminate\Contracts\Http\Kernel::class);
-        $response = $kernel->handle(
-            $request = Illuminate\Http\Request::capture()
-        )->send();
-        $kernel->terminate($request, $response);
-    }
-} catch (\Throwable $e) {
-    // Jika ada error, tampilkan ke layar untuk debugging
-    echo "<div style='font-family: sans-serif; padding: 20px; background: #fff5f5; color: #c53030; border: 1px solid #fed7d7; border-radius: 8px;'>";
-    echo "<h1>🚨 Error Terdeteksi:</h1>";
-    echo "<p><b>Pesan:</b> " . $e->getMessage() . "</p>";
-    echo "<p><b>File:</b> " . $e->getFile() . " di baris <b>" . $e->getLine() . "</b></p>";
-    echo "</div>";
+if (method_exists($app, 'handleRequest')) {
+    $app->handleRequest(Illuminate\Http\Request::capture());
+} else {
+    $kernel = $app->make(Illuminate\Contracts\Http\Kernel::class);
+    $response = $kernel->handle(
+        $request = Illuminate\Http\Request::capture()
+    )->send();
+    $kernel->terminate($request, $response);
 }
