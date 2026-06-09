@@ -75,55 +75,17 @@
         <div class="denah-interactive-box">
             {{-- Denah Lantai 1 --}}
             <div class="floor-layout active" id="floor1-layout">
-                <div class="blueprint-grid l1-grid">
-                    {{-- Workshop Perawatan --}}
-                    <div class="blueprint-room room-workshop">
-                        <span class="room-title">Workshop Perawatan</span>
-                        <div class="room-icons">
-                            <span class="safety-icon apar" title="APAR"><x-ui-icon name="shield" /></span>
-                            <span class="safety-icon p3k" title="Kotak P3K"><x-ui-icon name="check-circle" /></span>
+                <div class="map-container">
+                    <div class="map-wrapper" onclick="openLightbox('{{ asset('images/denah-lantai-1.png') }}', 'Lantai 1')">
+                        <img src="{{ asset('images/denah-lantai-1.png') }}" alt="Denah Tata Letak & Evakuasi Darurat Lantai 1" class="map-image">
+                        <div class="map-overlay">
+                            <span class="zoom-text"><x-ui-icon name="search" /> Klik untuk memperbesar</span>
                         </div>
                     </div>
-                    {{-- Gudang Bahan Baku --}}
-                    <div class="blueprint-room room-gudang">
-                        <span class="room-title">Gudang Bahan Baku</span>
-                        <div class="room-icons">
-                            <span class="safety-icon apar" title="APAR"><x-ui-icon name="shield" /></span>
-                            <span class="safety-icon hidran" title="Hidran"><x-ui-icon name="alert-triangle" /></span>
-                        </div>
-                    </div>
-                    {{-- Ruang Kontrol Lantai --}}
-                    <div class="blueprint-room room-kontrol">
-                        <span class="room-title">Ruang Kontrol Lantai</span>
-                        <div class="room-icons">
-                            <span class="safety-icon p3k" title="Kotak P3K"><x-ui-icon name="check-circle" /></span>
-                            <span class="safety-icon pin" title="Lokasi Sekarang"><x-ui-icon name="map" /></span>
-                        </div>
-                    </div>
-                    {{-- Toilet --}}
-                    <div class="blueprint-room room-toilet">
-                        <span class="room-title">Toilet</span>
-                    </div>
-                    {{-- Area Produksi Utama --}}
-                    <div class="blueprint-room room-produksi">
-                        <span class="room-title">Area Turbin & Generator</span>
-                        <div class="room-icons">
-                            <span class="safety-icon apar" title="APAR"><x-ui-icon name="shield" /></span>
-                            <span class="safety-icon hidran" title="Hidran"><x-ui-icon name="alert-triangle" /></span>
-                            <span class="safety-icon apar" title="APAR"><x-ui-icon name="shield" /></span>
-                        </div>
-                    </div>
-                    {{-- Musholla --}}
-                    <div class="blueprint-room room-musholla">
-                        <span class="room-title">Musholla</span>
-                    </div>
-
-                    {{-- Jalur Koridor Tengah & Panah Evakuasi --}}
-                    <div class="blueprint-hallway">
-                        <div class="evac-route horizontal">
-                            <span class="arrow-left">◀◀</span> Jalur Evakuasi Utama <span class="arrow-left">◀◀</span>
-                        </div>
-                        <div class="evac-exit" title="Pintu Keluar Utama">EXIT</div>
+                    <div class="map-actions">
+                        <a href="{{ asset('images/denah-lantai-1.png') }}" download="Denah-Evakuasi-Lantai-1.png" class="btn-map-download">
+                            <x-ui-icon name="download" /> Unduh Peta Lantai 1
+                        </a>
                     </div>
                 </div>
 
@@ -148,56 +110,17 @@
 
             {{-- Denah Lantai 2 --}}
             <div class="floor-layout" id="floor2-layout">
-                <div class="blueprint-grid l2-grid">
-                    {{-- Ruang Server --}}
-                    <div class="blueprint-room room-server">
-                        <span class="room-title">Ruang Server & IT</span>
-                        <div class="room-icons">
-                            <span class="safety-icon apar" title="APAR"><x-ui-icon name="shield" /></span>
+                <div class="map-container">
+                    <div class="map-wrapper" onclick="openLightbox('{{ asset('images/denah-lantai-2.png') }}', 'Lantai 2')">
+                        <img src="{{ asset('images/denah-lantai-2.png') }}" alt="Denah Tata Letak & Evakuasi Darurat Lantai 2" class="map-image">
+                        <div class="map-overlay">
+                            <span class="zoom-text"><x-ui-icon name="search" /> Klik untuk memperbesar</span>
                         </div>
                     </div>
-                    {{-- QC Lab --}}
-                    <div class="blueprint-room room-qclab">
-                        <span class="room-title">Laboratorium QC</span>
-                        <div class="room-icons">
-                            <span class="safety-icon p3k" title="Kotak P3K"><x-ui-icon name="check-circle" /></span>
-                            <span class="safety-icon apar" title="APAR"><x-ui-icon name="shield" /></span>
-                        </div>
-                    </div>
-                    {{-- Ruang Rapat --}}
-                    <div class="blueprint-room room-rapat">
-                        <span class="room-title">Ruang Rapat</span>
-                        <div class="room-icons">
-                            <span class="safety-icon p3k" title="Kotak P3K"><x-ui-icon name="check-circle" /></span>
-                        </div>
-                    </div>
-                    {{-- Kantor Staf Teknis --}}
-                    <div class="blueprint-room room-staf">
-                        <span class="room-title">Kantor Staf Teknis</span>
-                        <div class="room-icons">
-                            <span class="safety-icon pin" title="Lokasi Sekarang"><x-ui-icon name="map" /></span>
-                        </div>
-                    </div>
-                    {{-- Void / Area Jatuh --}}
-                    <div class="blueprint-room room-void" style="background: repeating-linear-gradient(45deg, rgba(239,68,68,0.1), rgba(239,68,68,0.1) 10px, rgba(239,68,68,0.2) 10px, rgba(239,68,68,0.2) 20px); border: 2px dashed #ef4444;">
-                        <span class="room-title" style="color: #ef4444; font-weight:700;">⚠ Void / Area Jatuh Potensial</span>
-                    </div>
-                    {{-- Kantor Manajemen --}}
-                    <div class="blueprint-room room-manajemen">
-                        <span class="room-title">Kantor Manajemen</span>
-                        <div class="room-icons">
-                            <span class="safety-icon apar" title="APAR"><x-ui-icon name="shield" /></span>
-                        </div>
-                    </div>
-                    {{-- Ruang Administrasi --}}
-                    <div class="blueprint-room room-administrasi">
-                        <span class="room-title">Ruang Administrasi</span>
-                    </div>
-
-                    {{-- Tangga Darurat --}}
-                    <div class="blueprint-room room-tangga">
-                        <span class="room-title" style="color: var(--hijau); font-weight: 700;">TANGGA DARURAT</span>
-                        <span class="safety-icon" style="color: var(--hijau); font-size: 24px; margin-top:5px;"><x-ui-icon name="globe" /></span>
+                    <div class="map-actions">
+                        <a href="{{ asset('images/denah-lantai-2.png') }}" download="Denah-Evakuasi-Lantai-2.png" class="btn-map-download">
+                            <x-ui-icon name="download" /> Unduh Peta Lantai 2
+                        </a>
                     </div>
                 </div>
 
@@ -226,6 +149,15 @@
     </div>
 </section>
 
+{{-- ── Lightbox Modal ── --}}
+<div id="map-lightbox" class="lightbox-modal" onclick="closeLightbox(event)" aria-hidden="true" role="dialog">
+    <span class="lightbox-close" onclick="closeLightbox()">&times;</span>
+    <div class="lightbox-content-wrap">
+        <h3 id="lightbox-title"></h3>
+        <img class="lightbox-img" id="lightbox-img" src="" alt="Detail Denah">
+    </div>
+</div>
+
 @endsection
 
 @section('scripts')
@@ -252,5 +184,27 @@
             });
         });
     });
+
+    // ── Lightbox Modal Functions ──
+    const lightbox = document.getElementById('map-lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
+    const lightboxTitle = document.getElementById('lightbox-title');
+
+    function openLightbox(src, title) {
+        if (!lightbox || !lightboxImg || !lightboxTitle) return;
+        lightboxImg.src = src;
+        lightboxTitle.innerText = `Denah Evakuasi & Keselamatan — ${title}`;
+        lightbox.classList.add('open');
+        lightbox.setAttribute('aria-hidden', 'false');
+        document.body.style.overflow = 'hidden';
+    }
+
+    function closeLightbox(e) {
+        if (!e || e.target === lightbox || e.target.classList.contains('lightbox-close') || e.target.classList.contains('lightbox-content-wrap')) {
+            lightbox.classList.remove('open');
+            lightbox.setAttribute('aria-hidden', 'true');
+            document.body.style.overflow = '';
+        }
+    }
 </script>
 @endsection

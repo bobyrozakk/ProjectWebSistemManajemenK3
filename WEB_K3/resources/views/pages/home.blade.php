@@ -211,6 +211,143 @@
 </section>
 
 {{-- ══════════════════════════════════════════════════════════════
+     STRUKTUR ORGANISASI K3
+     ========================================================== --}}
+<section class="org-section section" id="organisasi" aria-labelledby="org-heading">
+    <div class="container">
+        <div class="section-header">
+            <span class="label">Struktur Organisasi</span>
+            <h2 id="org-heading">Struktur Organisasi Tanggap Darurat & Keselamatan</h2>
+            <p>
+                Alur pertanggungjawaban komando operasional serta kepatuhan K3 hulu-hilir PT Barito Renewables Energy Tbk.
+            </p>
+        </div>
+
+        <div class="tab-container" style="margin-bottom: var(--space-xl);">
+            <button class="tab-btn active" data-view="interactive-tree">
+                <x-ui-icon name="workflow" /> Bagan Interaktif
+            </button>
+            <button class="tab-btn" data-view="image-chart">
+                <x-ui-icon name="chart" /> Bagan Gambar Resmi
+            </button>
+        </div>
+
+        <div class="org-view-box">
+            <!-- 1. Interactive CSS Tree -->
+            <div class="org-view-content active" id="interactive-tree-view">
+                <div class="tree-layout">
+                    <!-- Level 1: Direktur Utama -->
+                    <div class="tree-node root-node">
+                        <div class="node-card root-card">
+                            <x-ui-icon name="user" class="node-icon" />
+                            <div class="node-details">
+                                <h3>Direktur Utama</h3>
+                                <p>Pimpinan Tertinggi & Penanggung Jawab Kebijakan K3</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Level 2 & 3: Managers & Divisions -->
+                    <div class="tree-branches">
+                        <!-- Branch 1 -->
+                        <div class="tree-branch">
+                            <div class="node-card manager-card">
+                                <x-ui-icon name="briefcase" class="node-icon" />
+                                <div class="node-details">
+                                    <h3>Manajer Operasi Geothermal</h3>
+                                    <p>Operasi Pembangkit & Sumur</p>
+                                </div>
+                            </div>
+                            <div class="node-children">
+                                <div class="child-card"><x-ui-icon name="zap" class="child-icon" /> Divisi Produksi Listrik</div>
+                                <div class="child-card"><x-ui-icon name="settings" class="child-icon" /> Divisi Wellpad dan Pengeboran</div>
+                                <div class="child-card"><x-ui-icon name="workflow" class="child-icon" /> Divisi Steam Gathering System</div>
+                            </div>
+                        </div>
+
+                        <!-- Branch 2 -->
+                        <div class="tree-branch">
+                            <div class="node-card manager-card">
+                                <x-ui-icon name="settings" class="node-icon" />
+                                <div class="node-details">
+                                    <h3>Manajer Teknik & Pemeliharaan</h3>
+                                    <p>Pemeliharaan Aset & Fasilitas</p>
+                                </div>
+                            </div>
+                            <div class="node-children">
+                                <div class="child-card"><x-ui-icon name="factory" class="child-icon" /> Divisi Pemeliharaan PLTP</div>
+                                <div class="child-card"><x-ui-icon name="zap" class="child-icon" /> Divisi Instrumentasi dan Kelistrikan</div>
+                            </div>
+                        </div>
+
+                        <!-- Branch 3 -->
+                        <div class="tree-branch">
+                            <div class="node-card manager-card">
+                                <x-ui-icon name="users" class="node-icon" />
+                                <div class="node-details">
+                                    <h3>Manajer Administrasi & Umum</h3>
+                                    <p>SDM & Layanan Administrasi</p>
+                                </div>
+                            </div>
+                            <div class="node-children">
+                                <div class="child-card"><x-ui-icon name="folder" class="child-icon" /> Divisi SDM dan Administrasi</div>
+                            </div>
+                        </div>
+
+                        <!-- Branch 4 -->
+                        <div class="tree-branch">
+                            <div class="node-card manager-card">
+                                <x-ui-icon name="globe" class="node-icon" />
+                                <div class="node-details">
+                                    <h3>Manajer Lingkungan & Keberlanjutan</h3>
+                                    <p>EBTKE & Pengelolaan Limbah</p>
+                                </div>
+                            </div>
+                            <div class="node-children">
+                                <div class="child-card"><x-ui-icon name="box" class="child-icon" /> Divisi Pengelolaan Limbah</div>
+                                <div class="child-card"><x-ui-icon name="clipboard" class="child-icon" /> Pelatihan dan Kepatuhan K3</div>
+                            </div>
+                        </div>
+
+                        <!-- Branch 5 -->
+                        <div class="tree-branch">
+                            <div class="node-card coordinator-card">
+                                <x-ui-icon name="shield" class="node-icon" />
+                                <div class="node-details">
+                                    <h3>Koordinator K3</h3>
+                                    <p>Pengawasan & Kepatuhan SMK3</p>
+                                </div>
+                            </div>
+                            <div class="node-children">
+                                <div class="child-card"><x-ui-icon name="monitor" class="child-icon" /> Pengawasan Keselamatan Kerja</div>
+                                <div class="child-card"><x-ui-icon name="clipboard" class="child-icon" /> Pelatihan dan Kepatuhan K3</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 2. Image Chart View -->
+            <div class="org-view-content" id="image-chart-view">
+                <div class="map-container">
+                    <div class="map-wrapper" onclick="openLightbox('{{ asset('images/struktur-organisasi.png') }}', 'Struktur Organisasi')">
+                        <img src="{{ asset('images/struktur-organisasi.png') }}" alt="Struktur Organisasi PT Barito Renewables Energy Tbk" class="map-image" style="max-height: 650px;">
+                        <div class="map-overlay">
+                            <span class="zoom-text"><x-ui-icon name="search" /> Klik untuk memperbesar</span>
+                        </div>
+                    </div>
+                    <div class="map-actions">
+                        <a href="{{ asset('images/struktur-organisasi.png') }}" download="Struktur-Organisasi-BREN.png" class="btn-map-download">
+                            <x-ui-icon name="download" /> Unduh Gambar Struktur
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{{-- ══════════════════════════════════════════════════════════════
      TIM PENYUSUN MAHASISWA
      ========================================================== --}}
 <section class="tim-section section" id="tim" aria-labelledby="tim-heading">
@@ -264,4 +401,60 @@
     </div>
 </section>
 
+{{-- ── Lightbox Modal ── --}}
+<div id="map-lightbox" class="lightbox-modal" onclick="closeLightbox(event)" aria-hidden="true" role="dialog">
+    <span class="lightbox-close" onclick="closeLightbox()">&times;</span>
+    <div class="lightbox-content-wrap">
+        <h3 id="lightbox-title"></h3>
+        <img class="lightbox-img" id="lightbox-img" src="" alt="Detail Bagan">
+    </div>
+</div>
+
+@endsection
+
+@section('scripts')
+<script>
+    // ── View Switcher Bagan ──────────────────────────────────────────
+    const viewButtons = document.querySelectorAll('.tab-btn');
+    const viewContents = document.querySelectorAll('.org-view-content');
+
+    viewButtons.forEach(btn => {
+        btn.addEventListener('click', () => {
+            viewButtons.forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+
+            const view = btn.getAttribute('data-view');
+
+            viewContents.forEach(content => {
+                if (content.id === `${view}-view`) {
+                    content.classList.add('active');
+                } else {
+                    content.classList.remove('active');
+                }
+            });
+        });
+    });
+
+    // ── Lightbox Modal Functions ──
+    const lightbox = document.getElementById('map-lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
+    const lightboxTitle = document.getElementById('lightbox-title');
+
+    function openLightbox(src, title) {
+        if (!lightbox || !lightboxImg || !lightboxTitle) return;
+        lightboxImg.src = src;
+        lightboxTitle.innerText = `Bagan Resmi — ${title}`;
+        lightbox.classList.add('open');
+        lightbox.setAttribute('aria-hidden', 'false');
+        document.body.style.overflow = 'hidden';
+    }
+
+    function closeLightbox(e) {
+        if (!e || e.target === lightbox || e.target.classList.contains('lightbox-close') || e.target.classList.contains('lightbox-content-wrap')) {
+            lightbox.classList.remove('open');
+            lightbox.setAttribute('aria-hidden', 'true');
+            document.body.style.overflow = '';
+        }
+    }
+</script>
 @endsection

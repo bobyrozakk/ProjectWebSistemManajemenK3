@@ -512,3 +512,205 @@
     .hero__actions { flex-direction: column; }
     .hero__actions .btn { text-align: center; justify-content: center; }
 }
+
+/* ── Org Chart / Tree Styles ── */
+.org-section {
+    background: var(--abu-sedang);
+    padding: var(--space-4xl) 0;
+}
+
+.org-view-box {
+    background: var(--putih);
+    border-radius: var(--radius-lg);
+    padding: var(--space-2xl);
+    box-shadow: var(--shadow-lg);
+    border: 1px solid var(--abu-sedang);
+}
+
+.org-view-content {
+    display: none;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.org-view-content.active {
+    display: block;
+    opacity: 1;
+}
+
+/* Tree Layout */
+.tree-layout {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: var(--space-3xl);
+    padding: var(--space-md) 0;
+}
+
+.root-node {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.node-card {
+    background: var(--putih);
+    border-radius: var(--radius-md);
+    padding: var(--space-lg);
+    box-shadow: var(--shadow-md);
+    border: 1px solid var(--abu-sedang);
+    display: flex;
+    align-items: center;
+    gap: var(--space-md);
+    transition: all var(--transition);
+    position: relative;
+}
+
+.node-card:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-lg);
+}
+
+.root-card {
+    border-left: 5px solid var(--biru-tua);
+    width: 250px;
+    padding: var(--space-xl) var(--space-lg);
+}
+
+.root-card h3 {
+    font-size: var(--text-base);
+    color: var(--biru-tua);
+    margin: 0 0 4px 0;
+    font-weight: 700;
+}
+
+.root-card p {
+    font-size: var(--text-xs);
+    color: var(--abu-tua);
+    margin: 0;
+    line-height: 1.4;
+}
+
+.tree-branches {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-lg);
+    flex-grow: 1;
+}
+
+.tree-branch {
+    display: grid;
+    grid-template-columns: 240px 1fr;
+    gap: var(--space-xl);
+    align-items: center;
+}
+
+.manager-card {
+    border-left: 4px solid var(--biru-muda);
+}
+
+.coordinator-card {
+    border-left: 4px solid var(--emas);
+}
+
+.node-card h3 {
+    font-size: var(--text-sm);
+    color: var(--hitam);
+    margin: 0 0 2px 0;
+    font-weight: 600;
+}
+
+.node-card p {
+    font-size: var(--text-xs);
+    color: var(--abu-tua);
+    margin: 0;
+}
+
+.node-icon {
+    width: 32px;
+    height: 32px;
+    flex-shrink: 0;
+    color: var(--biru-tua);
+}
+
+.coordinator-card .node-icon {
+    color: var(--emas);
+}
+
+.node-children {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-sm);
+}
+
+.child-card {
+    background: var(--putih);
+    border: 1px solid var(--abu-sedang);
+    border-radius: var(--radius-md);
+    padding: 12px 20px;
+    font-size: var(--text-sm);
+    color: var(--hitam);
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-sm);
+    box-shadow: var(--shadow-sm);
+    transition: all var(--transition);
+}
+
+.child-card:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+    border-color: var(--biru-muda);
+    color: var(--biru-muda);
+}
+
+.child-icon {
+    width: 18px;
+    height: 18px;
+    color: var(--biru-tua);
+    flex-shrink: 0;
+    transition: color var(--transition);
+}
+
+.child-card:hover .child-icon {
+    color: var(--biru-muda);
+}
+
+/* Matching left borders to child cards based on the parent branch */
+.tree-branch:nth-child(-n+4) .child-card {
+    border-left: 3px solid var(--biru-muda);
+}
+
+.tree-branch:nth-child(5) .child-card {
+    border-left: 3px solid var(--emas);
+}
+
+.tree-branch:nth-child(5) .child-icon {
+    color: var(--emas);
+}
+
+/* Responsif Tree */
+@media (max-width: 1100px) {
+    .tree-layout {
+        flex-direction: column;
+        align-items: stretch;
+        gap: var(--space-xl);
+    }
+    
+    .root-node {
+        justify-content: flex-start;
+    }
+    
+    .root-card {
+        width: 100%;
+        max-width: 350px;
+    }
+    
+    .tree-branch {
+        grid-template-columns: 1fr;
+        gap: var(--space-md);
+    }
+}
+
