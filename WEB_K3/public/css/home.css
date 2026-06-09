@@ -714,3 +714,134 @@
     }
 }
 
+/* ── Galeri Video K3 Geothermal ─────────────────────────────────── */
+.video-gallery {
+    background: var(--putih);
+    padding: var(--space-4xl) 0;
+}
+
+.video-gallery__single-container {
+    max-width: 860px;
+    margin: 0 auto;
+    background: var(--abu-muda);
+    padding: var(--space-xl);
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--abu-sedang);
+    box-shadow: var(--shadow-sm);
+}
+
+.video-gallery__player-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.video-gallery__player {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    box-shadow: var(--shadow-md);
+    border: 3px solid var(--biru-muda);
+    background: #000;
+}
+
+.video-gallery__player iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+.video-gallery__placeholder-cover {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: var(--putih);
+    padding: var(--space-xl);
+    z-index: 2;
+    overflow: hidden;
+}
+
+.placeholder-bg {
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: center;
+    filter: blur(15px) brightness(0.25);
+    transform: scale(1.1);
+    z-index: 1;
+    transition: background-image 0.5s ease;
+}
+
+.placeholder-content {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-md);
+    max-width: 460px;
+    animation: fadeInUp 0.5s ease forwards;
+}
+
+.placeholder-icon-wrap {
+    width: 64px;
+    height: 64px;
+    border-radius: var(--radius-full);
+    background: rgba(16, 185, 129, 0.1);
+    border: 2px solid var(--biru-muda);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--biru-muda);
+    margin-bottom: var(--space-xs);
+    box-shadow: 0 0 16px rgba(16, 185, 129, 0.2);
+}
+
+.placeholder-icon {
+    width: 30px;
+    height: 30px;
+    color: var(--biru-muda);
+}
+
+.placeholder-title {
+    font-size: var(--text-lg);
+    font-weight: 700;
+    color: var(--putih);
+    margin: 0;
+    line-height: 1.3;
+}
+
+.placeholder-desc {
+    font-size: var(--text-sm);
+    color: rgba(255, 255, 255, 0.75);
+    line-height: 1.5;
+    margin: 0;
+}
+
+.btn-watch-yt {
+    background: #ff0000;
+    border-color: #ff0000;
+    color: var(--putih) !important;
+    box-shadow: 0 6px 20px rgba(255, 0, 0, 0.3);
+    margin-top: var(--space-sm);
+}
+
+.btn-watch-yt:hover {
+    background: #cc0000;
+    border-color: #cc0000;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(255, 0, 0, 0.5);
+    color: var(--putih) !important;
+}
+
+
+

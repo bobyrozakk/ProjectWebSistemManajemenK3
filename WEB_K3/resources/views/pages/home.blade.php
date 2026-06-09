@@ -211,6 +211,47 @@
 </section>
 
 {{-- ══════════════════════════════════════════════════════════════
+     GALERI VIDEO K3 GEOTHERMAL
+     ========================================================== --}}
+<section class="video-gallery section" id="edukasi-video" aria-labelledby="video-heading">
+    <div class="container">
+
+        {{-- Header section --}}
+        <div class="section-header">
+            <span class="label">Edukasi Video K3</span>
+            <h2 id="video-heading">Pengelolaan Risiko Gas H2S Panas Bumi</h2>
+            <p>
+                Simak video penjelasan mengenai pentingnya mitigasi bahaya gas hidrogen sulfida (H2S) pada aktivitas bleed off sumur panas bumi Dieng.
+            </p>
+        </div>
+
+        {{-- Single Video Player Container --}}
+        <div class="video-gallery__single-container">
+            <div class="video-gallery__player">
+                {{-- Placeholder Player (karena video dibatasi embedding) --}}
+                <div class="video-gallery__placeholder-cover" style="display: flex;">
+                    <div class="placeholder-bg" style="background-image: url('https://img.youtube.com/vi/-hNQ4RKd5uM/maxresdefault.jpg');"></div>
+                    <div class="placeholder-content">
+                        <div class="placeholder-icon-wrap">
+                            <x-ui-icon name="alert-triangle" class="placeholder-icon" />
+                        </div>
+                        <h3 class="placeholder-title">Pengelolaan Risiko Gas H2S (SIGAP) - Dieng</h3>
+                        <p class="placeholder-desc">
+                            Video ini dilindungi oleh pemiliknya dan hanya dapat diputar langsung di platform YouTube. Silakan klik tombol di bawah untuk menyaksikan.
+                        </p>
+                        <a href="https://www.youtube.com/watch?v=-hNQ4RKd5uM" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-watch-yt">
+                            <x-ui-icon name="globe" />
+                            Tonton di YouTube
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+{{-- ══════════════════════════════════════════════════════════════
      STRUKTUR ORGANISASI K3
      ========================================================== --}}
 <section class="org-section section" id="organisasi" aria-labelledby="org-heading">
