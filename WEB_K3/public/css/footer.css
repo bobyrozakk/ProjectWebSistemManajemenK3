@@ -6,7 +6,7 @@
 /* ── Footer Container ─────────────────────────────────────────────── */
 .footer {
     background:      var(--gradient-hero);
-    color:           var(--putih);
+    color:           var(--hitam);
     padding-top:     var(--space-4xl);
     position:        relative;
     overflow:        hidden;
@@ -62,7 +62,7 @@
     justify-content: center;
     color:           var(--hitam);
     flex-shrink:     0;
-    box-shadow:      0 4px 12px rgba(240,165,0,0.4);
+    box-shadow:      0 4px 12px rgba(5, 150, 105, 0.3);
 }
 
 .footer__brand-icon .ui-icon {
@@ -74,13 +74,13 @@
     font-family:  var(--font-heading);
     font-size:    var(--text-xl);
     font-weight:  800;
-    color:        var(--putih);
+    color:        var(--hitam);
 }
 
 .footer__brand-name span { color: var(--emas); }
 
 .footer__about-text {
-    color:         rgba(255,255,255,0.65);
+    color:         var(--abu-tua);
     font-size:     var(--text-sm);
     line-height:   1.8;
     margin-bottom: var(--space-lg);
@@ -99,10 +99,10 @@
     align-items:   center;
     gap:           6px;
     padding:       4px 12px;
-    border:        1px solid rgba(240,165,0,0.3);
+    border:        1px solid rgba(5, 150, 105, 0.3);
     border-radius: var(--radius-full);
     font-size:     var(--text-xs);
-    color:         rgba(255,255,255,0.6);
+    color:         var(--abu-tua);
     font-weight:   500;
 }
 
@@ -117,10 +117,10 @@
     font-family:    var(--font-heading);
     font-size:      var(--text-base);
     font-weight:    700;
-    color:          var(--putih);
+    color:          var(--hitam);
     margin-bottom:  var(--space-lg);
     padding-bottom: var(--space-sm);
-    border-bottom:  1px solid rgba(255,255,255,0.1);
+    border-bottom:  1px solid rgba(31, 41, 55, 0.1);
 }
 
 .footer__links {
@@ -133,7 +133,7 @@
     display:       flex;
     align-items:   center;
     gap:           var(--space-sm);
-    color:         rgba(255,255,255,0.6);
+    color:         var(--abu-tua);
     font-size:     var(--text-sm);
     transition:    color var(--transition-fast), padding-left var(--transition-fast);
     text-decoration: none;
@@ -174,12 +174,12 @@
 
 .footer__contact-text {
     font-size:  var(--text-sm);
-    color:      rgba(255,255,255,0.6);
+    color:      var(--abu-tua);
     line-height: 1.5;
 }
 
 .footer__contact-text strong {
-    color:       rgba(255,255,255,0.85);
+    color:       var(--hitam);
     font-weight: 600;
     display:     block;
     font-size:   var(--text-xs);
@@ -190,7 +190,7 @@
 
 /* ── Footer Bottom Bar ────────────────────────────────────────────── */
 .footer__bottom {
-    border-top: 1px solid rgba(255,255,255,0.08);
+    border-top: 1px solid rgba(31, 41, 55, 0.1);
     padding:    var(--space-lg) 0;
     position:   relative;
     z-index:    1;
@@ -206,7 +206,7 @@
 
 .footer__copyright {
     font-size: var(--text-sm);
-    color:     rgba(255,255,255,0.45);
+    color:     var(--abu-tua);
 }
 
 .footer__copyright strong {
@@ -216,7 +216,7 @@
 
 .footer__tagline {
     font-size: var(--text-xs);
-    color:     rgba(255,255,255,0.3);
+    color:     var(--abu-tua);
     font-style: italic;
 }
 

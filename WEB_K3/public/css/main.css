@@ -9,24 +9,24 @@
 /* ── CSS Custom Properties (Variabel Warna & Desain) ──────────────── */
 :root {
     /* Palet Warna Utama */
-    --biru-tua:     #1a3a5c;
-    --biru-medium:  #1e4d7b;
-    --biru-muda:    #2563eb;
-    --emas:         #f0a500;
-    --emas-muda:    #f7c244;
+    --biru-tua:     #064e3b; /* Deep Forest Green */
+    --biru-medium:  #047857; /* Emerald Green */
+    --biru-muda:    #10b981; /* Light Green */
+    --emas:         #059669; /* Primary Accent Green */
+    --emas-muda:    #a7f3d0; /* Soft Green */
     --putih:        #ffffff;
-    --abu-muda:     #f5f5f5;
-    --abu-sedang:   #e5e7eb;
-    --abu-tua:      #6b7280;
-    --hitam:        #111827;
+    --abu-muda:     #fafdfb; /* Mint White */
+    --abu-sedang:   #e6f4ea;
+    --abu-tua:      #4b5563;
+    --hitam:        #1f2937; /* Dark slate gray */
     --hijau:        #10b981;
     --merah:        #ef4444;
     --ungu:         #7c3aed;
 
     /* Gradien */
-    --gradient-utama:  linear-gradient(135deg, #1a3a5c 0%, #1e4d7b 50%, #2563eb 100%);
-    --gradient-emas:   linear-gradient(135deg, #f0a500 0%, #f7c244 100%);
-    --gradient-hero:   linear-gradient(160deg, #0f2540 0%, #1a3a5c 40%, #1e4d7b 100%);
+    --gradient-utama:  linear-gradient(135deg, #064e3b 0%, #047857 50%, #059669 100%);
+    --gradient-emas:   linear-gradient(135deg, #059669 0%, #10b981 100%);
+    --gradient-hero:   linear-gradient(160deg, #ffffff 0%, #f0fdf4 50%, #d1fae5 100%);
 
     /* Tipografi */
     --font-body:     'Inter', sans-serif;
@@ -64,8 +64,8 @@
     --shadow-sm:  0 1px 3px rgba(0,0,0,0.08), 0 1px 2px rgba(0,0,0,0.05);
     --shadow-md:  0 4px 16px rgba(0,0,0,0.1);
     --shadow-lg:  0 10px 40px rgba(0,0,0,0.15);
-    --shadow-biru: 0 8px 32px rgba(26,58,92,0.25);
-    --shadow-emas: 0 8px 24px rgba(240,165,0,0.3);
+    --shadow-biru: 0 8px 32px rgba(5, 150, 105, 0.12);
+    --shadow-emas: 0 8px 24px rgba(5, 150, 105, 0.18);
 
     /* Transisi */
     --transition: 0.3s ease;
@@ -201,7 +201,7 @@ button {
     display:       flex;
     align-items:   center;
     gap:           var(--space-sm);
-    color:         var(--putih);
+    color:         var(--hitam);
     font-size:     var(--text-3xl);
     margin-bottom: var(--space-sm);
 }
@@ -213,7 +213,7 @@ button {
 }
 
 .hero-mini p {
-    color:     rgba(255,255,255,0.75);
+    color:     var(--abu-tua);
     font-size: var(--text-lg);
 }
 
@@ -223,7 +223,7 @@ button {
     align-items:    center;
     gap:            var(--space-sm);
     font-size:      var(--text-sm);
-    color:          rgba(255,255,255,0.6);
+    color:          var(--abu-tua);
     margin-bottom:  var(--space-lg);
 }
 
@@ -231,7 +231,7 @@ button {
     display:     inline-flex;
     align-items: center;
     gap:         6px;
-    color:       rgba(255,255,255,0.7);
+    color:       var(--abu-tua);
     transition:  color var(--transition-fast);
 }
 
@@ -242,7 +242,7 @@ button {
 
 .breadcrumb a:hover { color: var(--emas); }
 
-.breadcrumb span { color: rgba(255,255,255,0.5); }
+.breadcrumb span { color: rgba(31, 41, 55, 0.4); }
 
 .breadcrumb .current { color: var(--emas); font-weight: 600; }
 
@@ -300,13 +300,14 @@ button {
 
 .btn-secondary {
     background:   transparent;
-    color:        var(--putih);
-    border-color: rgba(255,255,255,0.5);
+    color:        var(--biru-tua);
+    border-color: rgba(5, 150, 105, 0.5);
 }
 
 .btn-secondary:hover {
-    background:   rgba(255,255,255,0.1);
-    border-color: var(--putih);
+    background:   rgba(5, 150, 105, 0.08);
+    border-color: var(--emas);
+    color:        var(--emas);
 }
 
 .btn-outline {

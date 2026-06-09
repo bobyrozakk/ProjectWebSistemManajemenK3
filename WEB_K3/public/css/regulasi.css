@@ -37,16 +37,16 @@
 
 /* Header kolom standar */
 .comparison-table thead th.col-ohsas {
-    background: linear-gradient(135deg, #1e3a5f, #2563eb);
+    background: linear-gradient(135deg, #0f766e, #0d9488);
 }
 
 .comparison-table thead th.col-pp {
-    background: linear-gradient(135deg, #b45309, #f0a500);
-    color:      #1a1a1a;
+    background: linear-gradient(135deg, #b45309, #f97316);
+    color:      var(--putih);
 }
 
 .comparison-table th.col-aspek {
-    background:  #0f2540;
+    background:  #022c22;
     width:       22%;
 }
 
@@ -83,7 +83,7 @@
 }
 
 .comparison-table tbody tr:hover {
-    background: rgba(26,58,92,0.04);
+    background: rgba(13, 148, 136, 0.04);
 }
 
 .comparison-table tbody tr:last-child { border-bottom: none; }
@@ -207,12 +207,12 @@
 }
 
 .highlight-box--permenaker {
-    background: linear-gradient(135deg, #1a3a5c, #1e4d7b);
+    background: linear-gradient(135deg, #064e3b, #0f766e);
     color:      var(--putih);
 }
 
 .highlight-box--pp50 {
-    background: linear-gradient(135deg, #92400e, #b45309);
+    background: linear-gradient(135deg, #9a3412, #ea580c);
     color:      var(--putih);
 }
 

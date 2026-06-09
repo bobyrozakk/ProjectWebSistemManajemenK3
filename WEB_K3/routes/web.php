@@ -13,8 +13,6 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [SmkController::class, 'home'])->name('home');
 Route::get('/regulasi', [SmkController::class, 'regulasi'])->name('regulasi');
-Route::get('/tingkatan', [SmkController::class, 'tingkatan'])->name('tingkatan');
-Route::get('/flowchart', [SmkController::class, 'flowchart'])->name('flowchart');
-Route::get('/pengendalian', [SmkController::class, 'pengendalian'])->name('pengendalian');
 Route::get('/hirarc', [SmkController::class, 'hirarc'])->name('hirarc');
+Route::get('/denah', [SmkController::class, 'denah'])->name('denah');
 Route::get('/template', [SmkController::class, 'template'])->name('template');

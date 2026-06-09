@@ -1,5 +1,5 @@
 {{-- ============================================================
-    layouts/app.blade.php — Master Layout SMK3 Docs
+    layouts/app.blade.php — Master Layout BREN K3 Docs
     Semua halaman menggunakan layout ini via @extends
     ============================================================ --}}
 <!DOCTYPE html>
@@ -9,15 +9,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     {{-- SEO Meta Tags --}}
-    <meta name="description" content="@yield('meta_desc', 'Website dokumentasi SMK3 — Sistem Manajemen Keselamatan dan Kesehatan Kerja. Pelajari regulasi, level dokumen, HIRARC, dan template K3.')">
-    <meta name="keywords" content="SMK3, K3, Keselamatan Kerja, Kesehatan Kerja, HIRARC, Dokumentasi, PP 50 2012">
-    <meta name="author" content="Kelompok K3 — Mata Kuliah K3">
+    <meta name="description" content="@yield('meta_desc', 'Website dokumentasi K3 PT Barito Renewables Energy Tbk (BREN). Pelajari regulasi panas bumi, HIRARC area geothermal, denah evakuasi, dan unduh template K3.')">
+    <meta name="keywords" content="PT Barito Renewables Energy Tbk, BREN, K3, Geothermal, Panas Bumi, Keselamatan Kerja, Star Energy, HIRARC, Denah Evakuasi">
+    <meta name="author" content="Kelompok K3 PT Barito Renewables Energy Tbk — Mata Kuliah K3">
 
     {{-- Open Graph --}}
-    <meta property="og:title" content="@yield('title', 'SMK3 Docs') | Dokumentasi Sistem Manajemen K3">
+    <meta property="og:title" content="@yield('title', 'PT Barito Renewables Energy Tbk') | Dokumentasi K3 Geothermal">
     <meta property="og:type" content="website">
 
-    <title>@yield('title', 'Beranda') | SMK3 Docs — Dokumentasi K3</title>
+    <title>@yield('title', 'Beranda') | PT Barito Renewables Energy Tbk — Geothermal K3</title>
 
     {{-- Google Fonts --}}
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -25,9 +25,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
 
     {{-- CSS Global --}}
-    <link rel="stylesheet" href="{{ asset('css/main.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/navbar.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/footer.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/main.css') }}?v=1.5">
+    <link rel="stylesheet" href="{{ asset('css/navbar.css') }}?v=1.5">
+    <link rel="stylesheet" href="{{ asset('css/footer.css') }}?v=1.5">
 
     {{-- CSS Halaman Spesifik --}}
     @yield('css')

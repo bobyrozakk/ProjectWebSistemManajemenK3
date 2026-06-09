@@ -7,7 +7,7 @@
 .hero {
     min-height:     calc(100vh - var(--navbar-height));
     background:
-        linear-gradient(90deg, rgba(10,25,47,0.96) 0%, rgba(26,58,92,0.84) 42%, rgba(26,58,92,0.46) 100%),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.98) 0%, rgba(240, 253, 244, 0.92) 42%, rgba(209, 250, 229, 0.46) 100%),
         url('../images/sistem-manajemen-k3-pada-proyek-konstruksi.jpg') center/cover no-repeat;
     display:        flex;
     align-items:    center;
@@ -21,7 +21,7 @@
     position: absolute;
     inset:    auto 0 0 0;
     height:   180px;
-    background: linear-gradient(180deg, transparent 0%, rgba(10,25,47,0.72) 100%);
+    background: linear-gradient(180deg, transparent 0%, var(--abu-muda) 100%);
     pointer-events: none;
 }
 
@@ -95,7 +95,7 @@
     font-family:   var(--font-heading);
     font-size:     clamp(2rem, 5vw, 3.5rem);
     font-weight:   800;
-    color:         var(--putih);
+    color:         var(--hitam);
     line-height:   1.1;
     margin-bottom: var(--space-lg);
     letter-spacing: 0;
@@ -110,7 +110,7 @@
 
 .hero__subtitle {
     font-size:     var(--text-lg);
-    color:         rgba(255,255,255,0.7);
+    color:         var(--abu-tua);
     line-height:   1.7;
     margin-bottom: var(--space-2xl);
     max-width:     520px;
@@ -135,7 +135,7 @@
     display:     flex;
     align-items: center;
     gap:         var(--space-sm);
-    color:       rgba(255,255,255,0.6);
+    color:       var(--abu-tua);
     font-size:   var(--text-sm);
 }
 
@@ -164,13 +164,13 @@
 /* Kartu floating di hero */
 .hero__float-card {
     position:      absolute;
-    background:    rgba(10,25,47,0.62);
+    background:    rgba(255, 255, 255, 0.85);
     backdrop-filter: blur(16px);
-    border:        1px solid rgba(255,255,255,0.18);
+    border:        1px solid rgba(5, 150, 105, 0.18);
     border-radius: var(--radius-md);
     padding:       var(--space-lg);
     animation:     float 5s ease-in-out infinite;
-    box-shadow:    0 18px 42px rgba(0,0,0,0.24);
+    box-shadow:    0 18px 42px rgba(5, 150, 105, 0.12);
 }
 
 .hero__float-card--main {
@@ -218,14 +218,14 @@
 
 .hero__stat-label {
     font-size:  var(--text-xs);
-    color:      rgba(255,255,255,0.5);
+    color:      var(--abu-tua);
 }
 
 .hero__stat-val {
     font-family: var(--font-heading);
     font-weight: 700;
     font-size:   var(--text-base);
-    color:       var(--putih);
+    color:       var(--hitam);
 }
 
 .hero__mini-icon {
@@ -237,7 +237,7 @@
 
 .hero__mini-label {
     font-size:   var(--text-xs);
-    color:       rgba(255,255,255,0.5);
+    color:       var(--abu-tua);
     margin-bottom: 2px;
 }
 
