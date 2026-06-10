@@ -1,0 +1,370 @@
+/* =====================================================================
+   denah.css — Halaman Denah Evakuasi & Keselamatan
+   Website Dokumentasi K3 BREN Geothermal
+   ===================================================================== */
+
+/* ── Grid Legenda Simbol K3 ────────────────────────────────────────── */
+.legenda-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: var(--space-lg);
+    margin-top: var(--space-md);
+}
+
+.legenda-item {
+    background: var(--putih);
+    padding: var(--space-lg);
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-sm);
+    display: flex;
+    align-items: flex-start;
+    gap: var(--space-md);
+    border: 1px solid var(--abu-sedang);
+    transition: transform var(--transition);
+}
+
+.legenda-item:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+}
+
+.legenda-icon-wrap {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    font-size: var(--text-lg);
+}
+
+.legenda-icon-wrap.hijau {
+    background: rgba(16, 185, 129, 0.1);
+    color: #059669;
+}
+
+.legenda-icon-wrap.merah {
+    background: rgba(239, 68, 68, 0.1);
+    color: #dc2626;
+}
+
+.legenda-text h4 {
+    margin: 0 0 var(--space-xs) 0;
+    font-size: var(--text-base);
+    color: var(--hitam);
+}
+
+.legenda-text p {
+    margin: 0;
+    font-size: var(--text-xs);
+    line-height: 1.5;
+}
+
+/* ── Tab Switcher Lantai ─────────────────────────────────────────── */
+.tab-container {
+    display: flex;
+    justify-content: center;
+    gap: var(--space-md);
+    margin-bottom: var(--space-2xl);
+}
+
+.tab-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-sm);
+    padding: 12px 24px;
+    border-radius: var(--radius-full);
+    font-family: var(--font-heading);
+    font-weight: 600;
+    font-size: var(--text-sm);
+    background: var(--putih);
+    border: 2px solid var(--abu-sedang);
+    color: var(--abu-tua);
+    transition: all var(--transition);
+}
+
+.tab-btn .ui-icon {
+    width: 18px;
+    height: 18px;
+}
+
+.tab-btn:hover {
+    border-color: var(--biru-muda);
+    color: var(--biru-muda);
+}
+
+.tab-btn.active {
+    background: var(--biru-muda);
+    border-color: var(--biru-muda);
+    color: var(--putih);
+    box-shadow: var(--shadow-biru);
+}
+
+/* ── Kontainer Denah ────────────────────────────────────────────── */
+.denah-interactive-box {
+    background: var(--putih);
+    border-radius: var(--radius-lg);
+    padding: var(--space-2xl);
+    box-shadow: var(--shadow-lg);
+    border: 1px solid var(--abu-sedang);
+}
+
+.floor-layout {
+    display: none;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.floor-layout.active {
+    display: block;
+    opacity: 1;
+}
+
+/* ── Blueprint Blueprint Grid ───────────────────────────────────── */
+.blueprint-grid {
+    background-color: #0b221e; /* Warna gelap khas blueprint geothermal */
+    background-image: 
+        linear-gradient(rgba(13, 148, 136, 0.08) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(13, 148, 136, 0.08) 1px, transparent 1px);
+    background-size: 20px 20px;
+    border: 3px solid #0d9488;
+    border-radius: var(--radius-md);
+    padding: var(--space-xl);
+    position: relative;
+    box-shadow: inset 0 0 30px rgba(0,0,0,0.8);
+    display: grid;
+    gap: var(--space-md);
+    min-height: 460px;
+}
+
+/* Grid Layouts */
+.l1-grid {
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 140px 80px 140px;
+}
+
+.l2-grid {
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 140px 140px;
+}
+
+/* Komponen Room */
+.blueprint-room {
+    background: rgba(13, 148, 136, 0.06);
+    border: 2px solid #0d9488;
+    border-radius: var(--radius-sm);
+    padding: var(--space-md);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    transition: all var(--transition);
+}
+
+.blueprint-room:hover {
+    background: rgba(13, 148, 136, 0.15);
+    border-color: #14b8a6;
+    box-shadow: 0 0 15px rgba(20, 184, 166, 0.3);
+}
+
+.room-title {
+    font-family: var(--font-heading);
+    font-size: var(--text-sm);
+    font-weight: 700;
+    color: #5cf2e0;
+}
+
+.room-icons {
+    display: flex;
+    gap: var(--space-xs);
+    margin-top: var(--space-sm);
+}
+
+/* Safety Icons circular */
+.safety-icon {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    color: var(--putih);
+    box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+}
+
+.safety-icon .ui-icon {
+    width: 14px;
+    height: 14px;
+}
+
+.safety-icon.apar {
+    background: #dc2626;
+}
+
+.safety-icon.p3k {
+    background: #10b981;
+}
+
+.safety-icon.hidran {
+    background: #f97316;
+}
+
+.safety-icon.pin {
+    background: #ef4444;
+    animation: pulse 1.5s infinite;
+}
+
+/* Khusus Posisi Lantai 1 */
+.room-workshop { grid-column: 1 / 2; grid-row: 1 / 2; }
+.room-gudang { grid-column: 2 / 3; grid-row: 1 / 2; }
+.room-kontrol { grid-column: 3 / 4; grid-row: 1 / 2; }
+.room-toilet { grid-column: 4 / 5; grid-row: 1 / 2; }
+.room-produksi { grid-column: 1 / 3; grid-row: 3 / 4; }
+.room-musholla { grid-column: 3 / 4; grid-row: 3 / 4; }
+
+/* Hallway / Koridor Evakuasi */
+.blueprint-hallway {
+    grid-column: 1 / 5;
+    grid-row: 2 / 3;
+    background: rgba(16, 185, 129, 0.05);
+    border: 2px dashed #10b981;
+    border-radius: var(--radius-sm);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 var(--space-lg);
+    position: relative;
+}
+
+.evac-route {
+    font-family: var(--font-heading);
+    font-weight: 700;
+    font-size: var(--text-xs);
+    color: #34d399;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+}
+
+.evac-exit {
+    background: #10b981;
+    color: var(--putih);
+    font-family: var(--font-heading);
+    font-weight: 800;
+    font-size: var(--text-sm);
+    padding: 6px 14px;
+    border-radius: 4px;
+    box-shadow: 0 0 10px rgba(16,185,129,0.5);
+    animation: pulse 2s infinite;
+}
+
+/* Khusus Posisi Lantai 2 */
+.room-server { grid-column: 1 / 2; grid-row: 1 / 2; }
+.room-qclab { grid-column: 2 / 3; grid-row: 1 / 2; }
+.room-rapat { grid-column: 3 / 4; grid-row: 1 / 2; }
+.room-staf { grid-column: 1 / 2; grid-row: 2 / 3; }
+.room-void { grid-column: 2 / 3; grid-row: 2 / 3; }
+.room-manajemen { grid-column: 3 / 4; grid-row: 2 / 3; }
+.room-administrasi { grid-column: 4 / 5; grid-row: 1 / 2; }
+.room-tangga { grid-column: 4 / 5; grid-row: 2 / 3; border-color: #10b981; background: rgba(16,185,129,0.03); }
+
+/* ── Panel Prosedur Evakuasi ────────────────────────────────────── */
+.prosedur-panel {
+    display: flex;
+    gap: var(--space-xl);
+    margin-top: var(--space-xl);
+    align-items: stretch;
+}
+
+.prosedur-text {
+    flex: 1;
+}
+
+.prosedur-text h3 {
+    font-size: var(--text-lg);
+    color: var(--biru-tua);
+    margin-bottom: var(--space-sm);
+}
+
+.prosedur-text p {
+    font-size: var(--text-sm);
+    color: var(--abu-tua);
+    line-height: 1.6;
+    margin: 0;
+}
+
+.assembly-card {
+    background: rgba(16, 185, 129, 0.08);
+    border: 1px solid rgba(16, 185, 129, 0.2);
+    border-radius: var(--radius-md);
+    padding: var(--space-lg);
+    display: flex;
+    align-items: center;
+    gap: var(--space-md);
+    min-width: 250px;
+}
+
+.assembly-card.warning {
+    background: rgba(239, 68, 68, 0.08);
+    border: 1px solid rgba(239, 68, 68, 0.2);
+}
+
+.assembly-icon {
+    width: 36px;
+    height: 36px;
+    color: #059669;
+}
+
+.assembly-card.warning .assembly-icon {
+    color: #ef4444;
+}
+
+.assembly-card h4 {
+    margin: 0;
+    font-size: var(--text-base);
+    color: var(--hitam);
+}
+
+.assembly-card p {
+    margin: 0;
+    font-size: var(--text-sm);
+    font-weight: 600;
+}
+
+/* ── Responsif ────────────────────────────────────────────────────── */
+@media (max-width: 900px) {
+    .blueprint-grid {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+        min-height: auto;
+    }
+
+    .l1-grid > *, .l2-grid > * {
+        grid-column: auto !important;
+        grid-row: auto !important;
+        padding: var(--space-lg) var(--space-md);
+    }
+
+    .blueprint-hallway {
+        flex-direction: column;
+        gap: var(--space-md);
+        padding: var(--space-md);
+    }
+
+    .prosedur-panel {
+        flex-direction: column;
+        gap: var(--space-lg);
+    }
+
+    .assembly-card {
+        min-width: auto;
+    }
+}
+
+

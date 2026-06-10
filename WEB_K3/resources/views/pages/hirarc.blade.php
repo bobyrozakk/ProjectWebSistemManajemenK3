@@ -1,16 +1,45 @@
 {{-- ============================================================
-    pages/hirarc.blade.php — Halaman Manajemen Risiko & HIRARC
-    Poin 6: Hirarki Pengendalian Risiko & Tabel HIRARC
+    pages/hirarc.blade.php — Halaman Manajemen Risiko & HIRARC BREN
     Data diterima dari SmkController@hirarc
     ============================================================ --}}
 
 @extends('layouts.app')
 
-@section('title', 'Manajemen Risiko & HIRARC')
-@section('meta_desc', 'Pelajari HIRARC: Hierarki pengendalian risiko K3 (Eliminasi, Substitusi, Engineering, Administrasi, APD) dengan tabel HIRARC contoh dan matriks risiko.')
+@section('title', 'Identifikasi Bahaya & HIRARC')
+@section('meta_desc', 'Pelajari Identifikasi Bahaya K3 (HIRARC) di PT Barito Renewables Energy Tbk (BREN). Peta risiko Wellpad, Turbin, Cooling Tower, dan Switchyard.')
 
 @section('css')
-    <link rel="stylesheet" href="{{ asset('css/hirarc.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/hirarc.css') }}?v=1.5">
+    <style>
+        /* Aksen tombol filter interaktif */
+        .filter-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: var(--space-sm);
+            margin-bottom: var(--space-lg);
+            justify-content: center;
+        }
+        .filter-btn {
+            padding: 8px 18px;
+            border-radius: var(--radius-full);
+            font-size: var(--text-sm);
+            font-weight: 600;
+            background: var(--putih);
+            border: 1px solid var(--abu-sedang);
+            color: var(--abu-tua);
+            transition: all var(--transition-fast);
+        }
+        .filter-btn:hover {
+            border-color: var(--biru-muda);
+            color: var(--biru-muda);
+        }
+        .filter-btn.active {
+            background: var(--biru-muda);
+            border-color: var(--biru-muda);
+            color: var(--putih);
+            box-shadow: var(--shadow-biru);
+        }
+    </style>
 @endsection
 
 @section('content')
@@ -21,16 +50,16 @@
         <nav class="breadcrumb" aria-label="Breadcrumb">
             <a href="{{ route('home') }}"><x-ui-icon name="home" /> Beranda</a>
             <span>›</span>
-            <span class="current" aria-current="page">Manajemen Risiko & HIRARC</span>
+            <span class="current" aria-current="page">Identifikasi Bahaya & HIRARC</span>
         </nav>
-        <h1><x-ui-icon name="shield" /> Manajemen Risiko & HIRARC</h1>
-        <p>Hazard Identification, Risk Assessment, and Risk Control — fondasi pengendalian bahaya K3</p>
+        <h1><x-ui-icon name="shield" /> Identifikasi Bahaya & HIRARC</h1>
+        <p>Hazard Identification, Risk Assessment, and Risk Control — K3 Operasi Geothermal PT Barito Renewables Energy Tbk</p>
     </div>
 </header>
 
 {{-- ══════════════════════════════════════════════════════════════
      PIRAMIDA TERBALIK + DETAIL HIERARKI
-══════════════════════════════════════════════════════════════ --}}
+     ========================================================== --}}
 <section class="hirarc-pyramid-section section" id="hierarki" aria-labelledby="hierarki-heading">
     <div class="container">
 
@@ -38,7 +67,7 @@
             <span class="label">Hierarki Pengendalian</span>
             <h2 id="hierarki-heading">5 Hierarki Pengendalian Risiko K3</h2>
             <p>
-                Selalu utamakan pengendalian dari level paling atas (eliminasi) sebelum menggunakan APD sebagai pilihan terakhir.
+                Metode terstruktur PT Barito Renewables Energy Tbk untuk mengendalikan risiko di lapangan, mendahulukan Eliminasi sebelum menggunakan APD.
             </p>
         </div>
 
@@ -47,7 +76,7 @@
             {{-- ── Piramida Terbalik CSS ── --}}
             <div class="inv-pyramid" aria-label="Piramida terbalik hierarki pengendalian risiko K3">
                 <div class="inv-pyramid__label-top">
-                    ⬆ Paling Efektif — Eliminasi bahaya permanen
+                    ⬆ Paling Efektif — Mengeliminasi bahaya di hulu
                 </div>
 
                 @foreach($hierarki as $item)
@@ -57,16 +86,16 @@
                          tabindex="0"
                          aria-label="Level {{ $item['level'] }}: {{ $item['nama'] }} — {{ $item['deskripsi'] }}"
                          data-level="{{ $item['level'] }}">
-                        <span class="inv-level__icon"><x-ui-icon :name="$item['icon']" /></span>
-                        <div class="inv-level__text">
-                            <div class="inv-level__name">{{ $item['nama'] }}</div>
-                            <div class="inv-level__sub">Efektivitas: {{ $item['efektivitas'] }}</div>
-                        </div>
+                         <span class="inv-level__icon"><x-ui-icon :name="$item['icon']" /></span>
+                         <div class="inv-level__text">
+                             <div class="inv-level__name">{{ $item['nama'] }}</div>
+                             <div class="inv-level__sub">Efektivitas: {{ $item['efektivitas'] }}</div>
+                         </div>
                     </div>
                 @endforeach
 
                 <div class="inv-pyramid__label-bot">
-                    ⬇ Kurang Efektif — Hanya lindungi pekerja, bahaya tetap ada
+                    ⬇ Kurang Efektif — Pelindung terakhir di hilir (pekerja)
                 </div>
             </div>
 
@@ -76,7 +105,7 @@
                     <article class="hierarki-card" data-level="{{ $item['level'] }}"
                              style="border-left-color: {{ $item['warna'] }};">
                         <div class="hierarki-card__header">
-                            <span class="hierarki-card__icon"><x-ui-icon :name="$item['icon']" /></span>
+                            <span class="hierarki-card__icon" style="color: {{ $item['warna'] }};"><x-ui-icon :name="$item['icon']" /></span>
                             <div class="hierarki-card__info">
                                 <div class="hierarki-card__level">Level {{ $item['level'] }}</div>
                                 <div class="hierarki-card__name">{{ $item['nama'] }}</div>
@@ -88,7 +117,7 @@
                         </div>
                         <p class="hierarki-card__desc">{{ $item['deskripsi'] }}</p>
                         <div class="hierarki-card__contoh">
-                            <strong>Contoh:</strong> {{ $item['contoh'] }}
+                            <strong>Penerapan di PLTP:</strong> {{ $item['contoh'] }}
                         </div>
                     </article>
                 @endforeach
@@ -99,42 +128,68 @@
 </section>
 
 {{-- ══════════════════════════════════════════════════════════════
-     TABEL HIRARC DUMMY
-══════════════════════════════════════════════════════════════ --}}
+     TABEL HIRARC GEOTHERMAL BREN
+     ========================================================== --}}
 <section class="hirarc-table-section section section-alt" id="tabel-hirarc" aria-labelledby="tabel-heading">
     <div class="container">
 
         <div class="section-header">
-            <span class="label">Contoh Penerapan</span>
-            <h2 id="tabel-heading">Contoh Tabel HIRARC — Pekerjaan Industri Manufaktur</h2>
-            <p>Tabel HIRARC (Hazard Identification, Risk Assessment, Risk Control) dummy untuk referensi akademik.</p>
+            <span class="label">Identifikasi Bahaya</span>
+            <h2 id="tabel-heading">Matriks HIRARC Operasional Geothermal</h2>
+            <p>Daftar bahaya spesifik, potensi risiko, dan tindakan mitigasi pengendalian K3 di setiap area kerja PLTP PT Barito Renewables Energy Tbk.</p>
         </div>
 
-        <div class="hirarc-table-wrap" role="region" aria-label="Tabel HIRARC dummy">
+        {{-- Filter Interaktif Area Kerja --}}
+        <div class="filter-container">
+            <button class="filter-btn active" data-filter="all">Semua Area</button>
+            <button class="filter-btn" data-filter="wellpad">Wellpad</button>
+            <button class="filter-btn" data-filter="powerhouse">Power House</button>
+            <button class="filter-btn" data-filter="coolingtower">Cooling Tower</button>
+            <button class="filter-btn" data-filter="switchyard">Switchyard</button>
+        </div>
+
+        <div class="hirarc-table-wrap" role="region" aria-label="Tabel HIRARC Geothermal BREN">
             <table class="hirarc-table">
                 <thead>
                     <tr>
-                        <th scope="col">No.</th>
-                        <th scope="col">Aktivitas / Pekerjaan</th>
-                        <th scope="col">Bahaya (Hazard)</th>
-                        <th scope="col">Risiko (Risk)</th>
-                        <th scope="col">Level Risiko</th>
-                        <th scope="col">Pengendalian yang Diterapkan</th>
+                        <th scope="col" style="width: 5%;">No.</th>
+                        <th scope="col" style="width: 25%;">Area Operasional</th>
+                        <th scope="col" style="width: 25%;">Sumber Bahaya (Hazard)</th>
+                        <th scope="col" style="width: 20%;">Potensi Risiko (Risk)</th>
+                        <th scope="col" style="width: 10%;">Tingkat</th>
+                        <th scope="col" style="width: 15%;">Pengendalian & APD</th>
                     </tr>
                 </thead>
-                <tbody>
+                <tbody id="hirarc-tbody">
                     @foreach($tabel_hirarc as $baris)
-                        <tr>
+                        @php
+                            // tentukan filter class berdasarkan aktivitas
+                            $filterClass = '';
+                            if (str_contains(strtolower($baris['aktivitas']), 'wellpad')) {
+                                $filterClass = 'wellpad';
+                            } elseif (str_contains(strtolower($baris['aktivitas']), 'turbin') || str_contains(strtolower($baris['aktivitas']), 'power house')) {
+                                $filterClass = 'powerhouse';
+                            } elseif (str_contains(strtolower($baris['aktivitas']), 'pendingin') || str_contains(strtolower($baris['aktivitas']), 'cooling')) {
+                                $filterClass = 'coolingtower';
+                            } elseif (str_contains(strtolower($baris['aktivitas']), 'switchyard') || str_contains(strtolower($baris['aktivitas']), 'gardu')) {
+                                $filterClass = 'switchyard';
+                            }
+                        @endphp
+                        <tr data-area="{{ $filterClass }}">
                             <td class="td-no">{{ $baris['no'] }}</td>
-                            <td class="td-aktivitas">{{ $baris['aktivitas'] }}</td>
-                            <td>{{ $baris['bahaya'] }}</td>
+                            <td class="td-aktivitas" style="font-weight:700; color:var(--biru-tua);">
+                                {{ $baris['aktivitas'] }}
+                            </td>
+                            <td style="white-space: pre-line;">{!! $baris['bahaya'] !!}</td>
                             <td>{{ $baris['risiko'] }}</td>
                             <td>
                                 <span class="level-badge {{ $baris['warna_level'] }}">
                                     {{ $baris['level'] }}
                                 </span>
                             </td>
-                            <td>{{ $baris['pengendalian'] }}</td>
+                            <td style="font-size: var(--text-xs); line-height: 1.5; color: var(--abu-tua);">
+                                {{ $baris['pengendalian'] }}
+                            </td>
                         </tr>
                     @endforeach
                 </tbody>
@@ -146,14 +201,14 @@
 
 {{-- ══════════════════════════════════════════════════════════════
      MATRIKS RISIKO
-══════════════════════════════════════════════════════════════ --}}
+     ========================================================== --}}
 <section class="matriks-section section" id="matriks" aria-labelledby="matriks-heading">
     <div class="container">
 
         <div class="section-header">
-            <span class="label">Alat Bantu</span>
+            <span class="label">Matriks Penilaian</span>
             <h2 id="matriks-heading">Matriks Penilaian Risiko (5×5)</h2>
-            <p>Gunakan matriks ini untuk menentukan level risiko berdasarkan kemungkinan dan keparahan dampak.</p>
+            <p>Matriks evaluasi keparahan (severity) × kemungkinan (probability) untuk menetapkan level risiko bahaya.</p>
         </div>
 
         <div class="matriks-grid">
@@ -232,6 +287,32 @@
 
 @section('scripts')
 <script>
+    // ── Filter Interaktif Area Kerja ────────────────────────────────
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    const tableRows     = document.querySelectorAll('#hirarc-tbody tr');
+
+    filterButtons.forEach(btn => {
+        btn.addEventListener('click', () => {
+            // Hapus kelas aktif dari semua tombol
+            filterButtons.forEach(b => b.classList.remove('active'));
+            // Tambahkan kelas aktif ke tombol yang diklik
+            btn.classList.add('active');
+
+            const filterVal = btn.getAttribute('data-filter');
+
+            tableRows.forEach(row => {
+                const areaVal = row.getAttribute('data-area');
+                if (filterVal === 'all' || areaVal === filterVal) {
+                    row.style.display = '';
+                    row.style.opacity = '1';
+                } else {
+                    row.style.display = 'none';
+                    row.style.opacity = '0';
+                }
+            });
+        });
+    });
+
     // ── Highlight hierarki card saat klik piramida ───────────────────
     const invLevels   = document.querySelectorAll('.inv-level');
     const hierCards   = document.querySelectorAll('.hierarki-card');

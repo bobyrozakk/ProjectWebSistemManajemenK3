@@ -1,16 +1,15 @@
 {{-- ============================================================
-    pages/regulasi.blade.php — Halaman Dasar Hukum & Regulasi
-    Poin 2: Dasar Hukum SMK3
+    pages/regulasi.blade.php — Halaman Dasar Hukum & Regulasi K3 BREN
     Data diterima dari SmkController@regulasi
     ============================================================ --}}
 
 @extends('layouts.app')
 
 @section('title', 'Dasar Hukum & Regulasi')
-@section('meta_desc', 'Pelajari dasar hukum SMK3: perbandingan OHSAS 18001 vs PP No. 50/2012, Permenaker 05/1996, dan timeline regulasi K3 di Indonesia.')
+@section('meta_desc', 'Pelajari dasar hukum K3 panas bumi PT Barito Renewables Energy Tbk (BREN): UU No. 21/2014, Permen ESDM No. 38/2017, dan PP No. 50/2012.')
 
 @section('css')
-    <link rel="stylesheet" href="{{ asset('css/regulasi.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/regulasi.css') }}?v=1.5">
 @endsection
 
 @section('content')
@@ -24,38 +23,38 @@
             <span aria-hidden="true">›</span>
             <span class="current" aria-current="page">Dasar Hukum & Regulasi</span>
         </nav>
-        <h1><x-ui-icon name="scale" /> Dasar Hukum & Regulasi SMK3</h1>
-        <p>Landasan hukum nasional dan standar internasional yang mengatur penerapan SMK3 di Indonesia</p>
+        <h1><x-ui-icon name="scale" /> Dasar Hukum & Regulasi K3</h1>
+        <p>Landasan hukum nasional dan sektoral yang mengatur penerapan K3 pada kegiatan usaha panas bumi</p>
     </div>
 </header>
 
 {{-- ══════════════════════════════════════════════════════════════
-     TABEL PERBANDINGAN OHSAS vs PP 50
-══════════════════════════════════════════════════════════════ --}}
+     TABEL PERBANDINGAN K3 GEOTHERMAL vs UMUM
+     ========================================================== --}}
 <section class="comparison-section section" id="perbandingan" aria-labelledby="comparison-heading">
     <div class="container">
 
         <div class="section-header">
-            <span class="label">Perbandingan Standar</span>
-            <h2 id="comparison-heading">OHSAS 18001 vs PP No. 50 Tahun 2012</h2>
-            <p>Dua standar utama SMK3 yang sering direferensikan — satu internasional, satu wajib nasional.</p>
+            <span class="label">Perbandingan Regulasi</span>
+            <h2 id="comparison-heading">K3 Operasi Panas Bumi vs SMK3 Umum</h2>
+            <p>Perbedaan fokus keselamatan kerja khusus sektor panas bumi (geothermal) dibandingkan dengan SMK3 Nasional.</p>
         </div>
 
-        <div class="comparison-table-wrap" role="region" aria-label="Tabel Perbandingan OHSAS dan PP 50">
+        <div class="comparison-table-wrap" role="region" aria-label="Tabel Perbandingan K3 Geothermal dan SMK3 Nasional">
             <table class="comparison-table">
                 <thead>
                     <tr>
                         <th class="col-aspek" scope="col">Aspek Perbandingan</th>
                         <th class="col-ohsas" scope="col">
                             <div class="col-header">
-                                <span>OHSAS 18001</span>
-                                <span class="col-badge col-badge--int"><x-ui-icon name="globe" /> Internasional</span>
+                                <span>K3 Operasi Panas Bumi</span>
+                                <span class="col-badge col-badge--int" style="background:rgba(13,148,136,0.12); color:var(--biru-muda);"><x-ui-icon name="globe" /> Geothermal</span>
                             </div>
                         </th>
                         <th class="col-pp" scope="col">
                             <div class="col-header">
-                                <span>PP No. 50/2012</span>
-                                <span class="col-badge col-badge--nas">Nasional</span>
+                                <span>SMK3 Nasional (PP 50/2012)</span>
+                                <span class="col-badge col-badge--nas" style="background:rgba(249,115,22,0.12); color:var(--emas);">Umum</span>
                             </div>
                         </th>
                     </tr>
@@ -77,14 +76,14 @@
 
 {{-- ══════════════════════════════════════════════════════════════
      REGULASI NASIONAL (Cards dengan Badge)
-══════════════════════════════════════════════════════════════ --}}
+     ========================================================== --}}
 <section class="regulasi-section section section-alt" id="regulasi-nasional" aria-labelledby="regulasi-heading">
     <div class="container">
 
         <div class="section-header">
-            <span class="label">Regulasi Nasional</span>
+            <span class="label">Regulasi Sektoral</span>
             <h2 id="regulasi-heading">Peraturan Perundangan K3 di Indonesia</h2>
-            <p>Dari Undang-Undang hingga Peraturan Menteri — hierarki regulasi K3 yang membentuk SMK3.</p>
+            <p>Hierarki regulasi keselamatan kerja umum dan khusus industri energi panas bumi (geothermal).</p>
         </div>
 
         <div class="regulasi-grid">
@@ -104,70 +103,68 @@
 </section>
 
 {{-- ══════════════════════════════════════════════════════════════
-     HIGHLIGHT: PERMENAKER & PP 50
-══════════════════════════════════════════════════════════════ --}}
+     HIGHLIGHT: UU PANAS BUMI & PP 50/2012
+     ========================================================== --}}
 <section class="highlight-section section" id="highlight" aria-labelledby="highlight-heading">
     <div class="container">
 
         <div class="section-header">
-            <span class="label">Regulasi Terpenting</span>
-            <h2 id="highlight-heading">Dua Regulasi Kunci SMK3</h2>
-            <p>Permenaker 05/1996 dan PP No. 50/2012 adalah dua tonggak regulasi SMK3 paling berpengaruh.</p>
+            <span class="label">Regulasi Kunci</span>
+            <h2 id="highlight-heading">Dua Regulasi Utama K3 Panas Bumi</h2>
+            <p>Undang-Undang Panas Bumi No. 21/2014 dan PP No. 50/2012 merupakan landasan integrasi keselamatan operasi PT Barito Renewables Energy Tbk.</p>
         </div>
 
         <div class="highlight-grid">
-            {{-- Permenaker 05/1996 --}}
-            <div class="highlight-box highlight-box--permenaker">
-                <span class="highlight-box__tag">Sejarah</span>
-                <h3>Permenaker No. 05/1996</h3>
+            {{-- UU Panas Bumi --}}
+            <div class="highlight-box highlight-box--permenaker" style="border-top-color: var(--biru-muda);">
+                <span class="highlight-box__tag" style="background: rgba(13, 148, 136, 0.1); color: var(--biru-muda);">Hukum Sektoral</span>
+                <h3>UU No. 21 Tahun 2014</h3>
                 <p>
-                    Peraturan pertama yang secara khusus mengatur Sistem Manajemen K3 (SMK3) di Indonesia.
-                    Menjadi cikal bakal regulasi SMK3 modern dengan 12 elemen dan 166 kriteria audit yang komprehensif.
+                    Regulasi khusus yang melandasi tata kelola pemanfaatan energi panas bumi dari eksplorasi hingga eksploitasi di Indonesia dengan mengedepankan aspek perlindungan lingkungan dan keselamatan kerja.
                 </p>
                 <div class="highlight-box__points">
                     <div class="highlight-box__point">
-                        <span class="highlight-box__point-dot"></span>
-                        <span>Mewajibkan SMK3 bagi perusahaan dengan 100+ karyawan</span>
+                        <span class="highlight-box__point-dot" style="background: var(--biru-muda);"></span>
+                        <span>Mewajibkan standar keselamatan instalasi panas bumi</span>
                     </div>
                     <div class="highlight-box__point">
-                        <span class="highlight-box__point-dot"></span>
-                        <span>Memperkenalkan 12 elemen SMK3 pertama kali</span>
+                        <span class="highlight-box__point-dot" style="background: var(--biru-muda);"></span>
+                        <span>Mengatur perlindungan lingkungan hidup dan ekosistem</span>
                     </div>
                     <div class="highlight-box__point">
-                        <span class="highlight-box__point-dot"></span>
-                        <span>Mengatur audit SMK3 oleh lembaga independent</span>
+                        <span class="highlight-box__point-dot" style="background: var(--biru-muda);"></span>
+                        <span>Mengatur kompetensi teknis Kepala Teknik Panas Bumi (KTPB)</span>
                     </div>
                     <div class="highlight-box__point">
-                        <span class="highlight-box__point-dot"></span>
-                        <span>Berlaku dari 1996 hingga digantikan PP 50/2012</span>
+                        <span class="highlight-box__point-dot" style="background: var(--biru-muda);"></span>
+                        <span>Pengawasan ketat oleh Inspektur Panas Bumi EBTKE</span>
                     </div>
                 </div>
             </div>
 
             {{-- PP No. 50/2012 --}}
-            <div class="highlight-box highlight-box--pp50">
-                <span class="highlight-box__tag">Regulasi Aktif</span>
+            <div class="highlight-box highlight-box--pp50" style="border-top-color: var(--emas);">
+                <span class="highlight-box__tag" style="background: rgba(249, 115, 22, 0.1); color: var(--emas);">Hukum Nasional</span>
                 <h3>PP No. 50 Tahun 2012</h3>
                 <p>
-                    Peraturan Pemerintah yang saat ini menjadi acuan wajib penerapan SMK3 di Indonesia.
-                    Menggantikan Permenaker 05/1996 dengan cakupan yang lebih luas dan penegakan hukum yang lebih kuat.
+                    Peraturan Pemerintah yang mewajibkan seluruh badan usaha dengan tingkat risiko bahaya tinggi seperti Pembangkit Listrik (PLTP) untuk mengintegrasikan manajemen K3 ke dalam sistem manajemen perusahaan.
                 </p>
                 <div class="highlight-box__points">
                     <div class="highlight-box__point">
-                        <span class="highlight-box__point-dot"></span>
-                        <span>Wajib untuk perusahaan dengan 100+ pekerja atau risiko tinggi</span>
+                        <span class="highlight-box__point-dot" style="background: var(--emas);"></span>
+                        <span>Menerapkan 5 prinsip dasar SMK3 secara terpadu</span>
                     </div>
                     <div class="highlight-box__point">
-                        <span class="highlight-box__point-dot"></span>
-                        <span>5 prinsip dasar SMK3 dengan 12 elemen dan 166 kriteria</span>
+                        <span class="highlight-box__point-dot" style="background: var(--emas);"></span>
+                        <span>Mencegah kecelakaan kerja dan Penyakit Akibat Kerja (PAK)</span>
                     </div>
                     <div class="highlight-box__point">
-                        <span class="highlight-box__point-dot"></span>
-                        <span>Tingkat pencapaian: Awal (64%), Transisi (64-84%), Lanjutan (>84%)</span>
+                        <span class="highlight-box__point-dot" style="background: var(--emas);"></span>
+                        <span>Meningkatkan efisiensi dan produktivitas kerja karyawan</span>
                     </div>
                     <div class="highlight-box__point">
-                        <span class="highlight-box__point-dot"></span>
-                        <span>Sanksi administratif bagi perusahaan yang tidak patuh</span>
+                        <span class="highlight-box__point-dot" style="background: var(--emas);"></span>
+                        <span>Menyediakan audit berkala untuk sertifikasi kepatuhan</span>
                     </div>
                 </div>
             </div>
@@ -178,22 +175,22 @@
 
 {{-- ══════════════════════════════════════════════════════════════
      TIMELINE REGULASI K3 INDONESIA
-══════════════════════════════════════════════════════════════ --}}
+     ========================================================== --}}
 <section class="timeline-section section section-alt" id="timeline" aria-labelledby="timeline-heading">
     <div class="container">
 
         <div class="section-header">
             <span class="label">Riwayat Regulasi</span>
-            <h2 id="timeline-heading">Perjalanan Regulasi K3 di Indonesia</h2>
-            <p>Dari 1970 hingga kini — evolusi regulasi K3 yang membentuk SMK3 modern.</p>
+            <h2 id="timeline-heading">Perjalanan Regulasi K3 & Panas Bumi</h2>
+            <p>Evolusi dasar hukum keselamatan kerja dan peraturan panas bumi di Indonesia.</p>
         </div>
 
         <div class="timeline" role="list">
             @foreach($timeline as $item)
                 <div class="timeline-item" role="listitem">
-                    <div class="timeline-item__dot" aria-hidden="true"></div>
+                    <div class="timeline-item__dot" aria-hidden="true" style="background: var(--biru-muda); border-color: var(--putih);"></div>
                     <div class="timeline-item__card">
-                        <div class="timeline-item__year">{{ $item['tahun'] }}</div>
+                        <div class="timeline-item__year" style="color: var(--biru-muda);">{{ $item['tahun'] }}</div>
                         <p class="timeline-item__text">{{ $item['peristiwa'] }}</p>
                     </div>
                 </div>

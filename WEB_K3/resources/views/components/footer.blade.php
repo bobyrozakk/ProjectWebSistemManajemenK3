@@ -13,20 +13,20 @@
             <div class="footer__col">
                 <div class="footer__brand">
                     <div class="footer__brand-icon">
-                        <x-ui-icon name="hard-hat" />
+                        <x-ui-icon name="zap" />
                     </div>
-                    <span class="footer__brand-name">SMK3<span> Docs</span></span>
+                    <span class="footer__brand-name" style="font-size: 1.15rem; white-space: nowrap;">PT Barito Renewables<span> Energy Tbk</span></span>
                 </div>
 
                 <p class="footer__about-text">
-                    Website dokumentasi Sistem Manajemen Keselamatan dan Kesehatan Kerja (SMK3)
-                    yang dikembangkan sebagai media pembelajaran untuk mata kuliah K3.
+                    Website dokumentasi K3 PT Barito Renewables Energy Tbk (BREN) & Star Energy Geothermal
+                    yang dikembangkan sebagai media pembelajaran mata kuliah K3.
                     Semua konten bersifat edukatif dan akademis.
                 </p>
 
                 <div class="footer__badges">
-                    <span class="footer__badge"><x-ui-icon name="clipboard" /> PP No. 50/2012</span>
-                    <span class="footer__badge"><x-ui-icon name="globe" /> OHSAS 18001</span>
+                    <span class="footer__badge"><x-ui-icon name="clipboard" /> UU No. 21/2014</span>
+                    <span class="footer__badge"><x-ui-icon name="globe" /> Geothermal K3</span>
                     <span class="footer__badge"><x-ui-icon name="shield" /> ISO 45001</span>
                 </div>
             </div>
@@ -39,7 +39,7 @@
                         <li>
                             <a href="{{ route('home') }}" class="footer__link">
                                 <span class="link-dot"></span>
-                                Beranda & Pengantar
+                                Beranda & Profil PT Barito Renewables Energy Tbk
                             </a>
                         </li>
                         <li>
@@ -49,27 +49,15 @@
                             </a>
                         </li>
                         <li>
-                            <a href="{{ route('tingkatan') }}" class="footer__link">
-                                <span class="link-dot"></span>
-                                Level Dokumen SMK3
-                            </a>
-                        </li>
-                        <li>
-                            <a href="{{ route('flowchart') }}" class="footer__link">
-                                <span class="link-dot"></span>
-                                Panduan Diagram Alir
-                            </a>
-                        </li>
-                        <li>
-                            <a href="{{ route('pengendalian') }}" class="footer__link">
-                                <span class="link-dot"></span>
-                                Pengendalian Dokumen
-                            </a>
-                        </li>
-                        <li>
                             <a href="{{ route('hirarc') }}" class="footer__link">
                                 <span class="link-dot"></span>
-                                Manajemen Risiko HIRARC
+                                Identifikasi Bahaya (HIRARC)
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{{ route('denah') }}" class="footer__link">
+                                <span class="link-dot"></span>
+                                Denah Evakuasi Gedung
                             </a>
                         </li>
                         <li>
@@ -135,11 +123,11 @@
         <div class="container">
             <div class="footer__bottom-inner">
                 <p class="footer__copyright">
-                    &copy; {{ date('Y') }} <strong>SMK3 Docs</strong> — Dibuat untuk keperluan akademik mata kuliah K3.
+                    &copy; {{ date('Y') }} <strong>PT Barito Renewables Energy Tbk</strong> — Dibuat untuk keperluan akademik mata kuliah K3.
                     Data bersifat dummy dan edukatif.
                 </p>
                 <span class="footer__tagline">
-                    "Keselamatan bukan pilihan, melainkan kewajiban." — PP No. 50/2012
+                    "Keselamatan kerja panas bumi demi keberlanjutan energi bersih." — PT Barito Renewables Energy Tbk
                 </span>
             </div>
         </div>

@@ -10,7 +10,7 @@
 @section('meta_desc', 'Unduh 6 template K3 gratis: Formulir Kecelakaan, Lembar Inspeksi, Daftar Hadir Rapat, Notulen, Formulir Medis, dan Jadwal Latihan Darurat. Untuk keperluan akademik.')
 
 @section('css')
-    <link rel="stylesheet" href="{{ asset('css/template.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/template.css') }}?v=1.5">
 @endsection
 
 @section('content')
@@ -23,8 +23,8 @@
             <span>›</span>
             <span class="current" aria-current="page">Pusat Unduhan Template</span>
         </nav>
-        <h1><x-ui-icon name="download" /> Pusat Unduhan Template SMK3</h1>
-        <p>6 template K3 siap pakai untuk kebutuhan dokumentasi dan akademik Anda</p>
+        <h1><x-ui-icon name="download" /> Pusat Unduhan Template PT Barito Renewables Energy Tbk</h1>
+        <p>6 template dokumen administrasi K3 operasional panas bumi PT Barito Renewables Energy Tbk siap pakai</p>
     </div>
 </header>
 

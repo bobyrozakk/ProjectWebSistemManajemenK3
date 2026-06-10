@@ -7,13 +7,11 @@
 @php
     $currentRoute = Route::currentRouteName();
     $navLinks = [
-        ['route' => 'home',         'label' => 'Beranda',       'icon' => 'home'],
-        ['route' => 'regulasi',     'label' => 'Regulasi',      'icon' => 'scale'],
-        ['route' => 'tingkatan',    'label' => 'Tingkatan',     'icon' => 'layers'],
-        ['route' => 'flowchart',    'label' => 'Flowchart',     'icon' => 'workflow'],
-        ['route' => 'pengendalian', 'label' => 'Pengendalian',  'icon' => 'folder'],
-        ['route' => 'hirarc',       'label' => 'HIRARC',        'icon' => 'shield'],
-        ['route' => 'template',     'label' => 'Template',      'icon' => 'download'],
+        ['route' => 'home',         'label' => 'Beranda',            'icon' => 'home'],
+        ['route' => 'regulasi',     'label' => 'Regulasi',           'icon' => 'scale'],
+        ['route' => 'hirarc',       'label' => 'Identifikasi Bahaya','icon' => 'shield'],
+        ['route' => 'denah',        'label' => 'Denah Evakuasi',     'icon' => 'map'],
+        ['route' => 'template',     'label' => 'Template',           'icon' => 'download'],
     ];
 @endphp
 
@@ -21,11 +19,11 @@
     <div class="container navbar__inner">
 
         {{-- ── Logo ── --}}
-        <a href="{{ route('home') }}" class="navbar__logo" aria-label="SMK3 Docs - Beranda">
+        <a href="{{ route('home') }}" class="navbar__logo" aria-label="PT Barito Renewables Energy Tbk - Beranda">
             <div class="navbar__logo-icon">
-                <x-ui-icon name="hard-hat" />
+                <x-ui-icon name="zap" />
             </div>
-            <span class="navbar__logo-text">SMK3<span> Docs</span></span>
+            <span class="navbar__logo-text" style="font-size: 0.95rem; white-space: nowrap;">PT Barito Renewables<span> Energy Tbk</span></span>
         </a>
 
         {{-- ── Menu Navigasi ── --}}

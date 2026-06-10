@@ -7,7 +7,7 @@
 .hero {
     min-height:     calc(100vh - var(--navbar-height));
     background:
-        linear-gradient(90deg, rgba(10,25,47,0.96) 0%, rgba(26,58,92,0.84) 42%, rgba(26,58,92,0.46) 100%),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.98) 0%, rgba(240, 253, 244, 0.92) 42%, rgba(209, 250, 229, 0.46) 100%),
         url('../images/sistem-manajemen-k3-pada-proyek-konstruksi.jpg') center/cover no-repeat;
     display:        flex;
     align-items:    center;
@@ -21,7 +21,7 @@
     position: absolute;
     inset:    auto 0 0 0;
     height:   180px;
-    background: linear-gradient(180deg, transparent 0%, rgba(10,25,47,0.72) 100%);
+    background: linear-gradient(180deg, transparent 0%, var(--abu-muda) 100%);
     pointer-events: none;
 }
 
@@ -95,7 +95,7 @@
     font-family:   var(--font-heading);
     font-size:     clamp(2rem, 5vw, 3.5rem);
     font-weight:   800;
-    color:         var(--putih);
+    color:         var(--hitam);
     line-height:   1.1;
     margin-bottom: var(--space-lg);
     letter-spacing: 0;
@@ -110,7 +110,7 @@
 
 .hero__subtitle {
     font-size:     var(--text-lg);
-    color:         rgba(255,255,255,0.7);
+    color:         var(--abu-tua);
     line-height:   1.7;
     margin-bottom: var(--space-2xl);
     max-width:     520px;
@@ -135,7 +135,7 @@
     display:     flex;
     align-items: center;
     gap:         var(--space-sm);
-    color:       rgba(255,255,255,0.6);
+    color:       var(--abu-tua);
     font-size:   var(--text-sm);
 }
 
@@ -164,13 +164,13 @@
 /* Kartu floating di hero */
 .hero__float-card {
     position:      absolute;
-    background:    rgba(10,25,47,0.62);
+    background:    rgba(255, 255, 255, 0.85);
     backdrop-filter: blur(16px);
-    border:        1px solid rgba(255,255,255,0.18);
+    border:        1px solid rgba(5, 150, 105, 0.18);
     border-radius: var(--radius-md);
     padding:       var(--space-lg);
     animation:     float 5s ease-in-out infinite;
-    box-shadow:    0 18px 42px rgba(0,0,0,0.24);
+    box-shadow:    0 18px 42px rgba(5, 150, 105, 0.12);
 }
 
 .hero__float-card--main {
@@ -218,14 +218,14 @@
 
 .hero__stat-label {
     font-size:  var(--text-xs);
-    color:      rgba(255,255,255,0.5);
+    color:      var(--abu-tua);
 }
 
 .hero__stat-val {
     font-family: var(--font-heading);
     font-weight: 700;
     font-size:   var(--text-base);
-    color:       var(--putih);
+    color:       var(--hitam);
 }
 
 .hero__mini-icon {
@@ -237,7 +237,7 @@
 
 .hero__mini-label {
     font-size:   var(--text-xs);
-    color:       rgba(255,255,255,0.5);
+    color:       var(--abu-tua);
     margin-bottom: 2px;
 }
 
@@ -512,3 +512,336 @@
     .hero__actions { flex-direction: column; }
     .hero__actions .btn { text-align: center; justify-content: center; }
 }
+
+/* ── Org Chart / Tree Styles ── */
+.org-section {
+    background: var(--abu-sedang);
+    padding: var(--space-4xl) 0;
+}
+
+.org-view-box {
+    background: var(--putih);
+    border-radius: var(--radius-lg);
+    padding: var(--space-2xl);
+    box-shadow: var(--shadow-lg);
+    border: 1px solid var(--abu-sedang);
+}
+
+.org-view-content {
+    display: none;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.org-view-content.active {
+    display: block;
+    opacity: 1;
+}
+
+/* Tree Layout */
+.tree-layout {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: var(--space-3xl);
+    padding: var(--space-md) 0;
+}
+
+.root-node {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.node-card {
+    background: var(--putih);
+    border-radius: var(--radius-md);
+    padding: var(--space-lg);
+    box-shadow: var(--shadow-md);
+    border: 1px solid var(--abu-sedang);
+    display: flex;
+    align-items: center;
+    gap: var(--space-md);
+    transition: all var(--transition);
+    position: relative;
+}
+
+.node-card:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-lg);
+}
+
+.root-card {
+    border-left: 5px solid var(--biru-tua);
+    width: 250px;
+    padding: var(--space-xl) var(--space-lg);
+}
+
+.root-card h3 {
+    font-size: var(--text-base);
+    color: var(--biru-tua);
+    margin: 0 0 4px 0;
+    font-weight: 700;
+}
+
+.root-card p {
+    font-size: var(--text-xs);
+    color: var(--abu-tua);
+    margin: 0;
+    line-height: 1.4;
+}
+
+.tree-branches {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-lg);
+    flex-grow: 1;
+}
+
+.tree-branch {
+    display: grid;
+    grid-template-columns: 240px 1fr;
+    gap: var(--space-xl);
+    align-items: center;
+}
+
+.manager-card {
+    border-left: 4px solid var(--biru-muda);
+}
+
+.coordinator-card {
+    border-left: 4px solid var(--emas);
+}
+
+.node-card h3 {
+    font-size: var(--text-sm);
+    color: var(--hitam);
+    margin: 0 0 2px 0;
+    font-weight: 600;
+}
+
+.node-card p {
+    font-size: var(--text-xs);
+    color: var(--abu-tua);
+    margin: 0;
+}
+
+.node-icon {
+    width: 32px;
+    height: 32px;
+    flex-shrink: 0;
+    color: var(--biru-tua);
+}
+
+.coordinator-card .node-icon {
+    color: var(--emas);
+}
+
+.node-children {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-sm);
+}
+
+.child-card {
+    background: var(--putih);
+    border: 1px solid var(--abu-sedang);
+    border-radius: var(--radius-md);
+    padding: 12px 20px;
+    font-size: var(--text-sm);
+    color: var(--hitam);
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-sm);
+    box-shadow: var(--shadow-sm);
+    transition: all var(--transition);
+}
+
+.child-card:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+    border-color: var(--biru-muda);
+    color: var(--biru-muda);
+}
+
+.child-icon {
+    width: 18px;
+    height: 18px;
+    color: var(--biru-tua);
+    flex-shrink: 0;
+    transition: color var(--transition);
+}
+
+.child-card:hover .child-icon {
+    color: var(--biru-muda);
+}
+
+/* Matching left borders to child cards based on the parent branch */
+.tree-branch:nth-child(-n+4) .child-card {
+    border-left: 3px solid var(--biru-muda);
+}
+
+.tree-branch:nth-child(5) .child-card {
+    border-left: 3px solid var(--emas);
+}
+
+.tree-branch:nth-child(5) .child-icon {
+    color: var(--emas);
+}
+
+/* Responsif Tree */
+@media (max-width: 1100px) {
+    .tree-layout {
+        flex-direction: column;
+        align-items: stretch;
+        gap: var(--space-xl);
+    }
+    
+    .root-node {
+        justify-content: flex-start;
+    }
+    
+    .root-card {
+        width: 100%;
+        max-width: 350px;
+    }
+    
+    .tree-branch {
+        grid-template-columns: 1fr;
+        gap: var(--space-md);
+    }
+}
+
+/* ── Galeri Video K3 Geothermal ─────────────────────────────────── */
+.video-gallery {
+    background: var(--putih);
+    padding: var(--space-4xl) 0;
+}
+
+.video-gallery__single-container {
+    max-width: 860px;
+    margin: 0 auto;
+    background: var(--abu-muda);
+    padding: var(--space-xl);
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--abu-sedang);
+    box-shadow: var(--shadow-sm);
+}
+
+.video-gallery__player-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.video-gallery__player {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    box-shadow: var(--shadow-md);
+    border: 3px solid var(--biru-muda);
+    background: #000;
+}
+
+.video-gallery__player iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+.video-gallery__placeholder-cover {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: var(--putih);
+    padding: var(--space-xl);
+    z-index: 2;
+    overflow: hidden;
+}
+
+.placeholder-bg {
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: center;
+    filter: blur(15px) brightness(0.25);
+    transform: scale(1.1);
+    z-index: 1;
+    transition: background-image 0.5s ease;
+}
+
+.placeholder-content {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-md);
+    max-width: 460px;
+    animation: fadeInUp 0.5s ease forwards;
+}
+
+.placeholder-icon-wrap {
+    width: 64px;
+    height: 64px;
+    border-radius: var(--radius-full);
+    background: rgba(16, 185, 129, 0.1);
+    border: 2px solid var(--biru-muda);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--biru-muda);
+    margin-bottom: var(--space-xs);
+    box-shadow: 0 0 16px rgba(16, 185, 129, 0.2);
+}
+
+.placeholder-icon {
+    width: 30px;
+    height: 30px;
+    color: var(--biru-muda);
+}
+
+.placeholder-title {
+    font-size: var(--text-lg);
+    font-weight: 700;
+    color: var(--putih);
+    margin: 0;
+    line-height: 1.3;
+}
+
+.placeholder-desc {
+    font-size: var(--text-sm);
+    color: rgba(255, 255, 255, 0.75);
+    line-height: 1.5;
+    margin: 0;
+}
+
+.btn-watch-yt {
+    background: #ff0000;
+    border-color: #ff0000;
+    color: var(--putih) !important;
+    box-shadow: 0 6px 20px rgba(255, 0, 0, 0.3);
+    margin-top: var(--space-sm);
+}
+
+.btn-watch-yt:hover {
+    background: #cc0000;
+    border-color: #cc0000;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(255, 0, 0, 0.5);
+    color: var(--putih) !important;
+}
+
+
+
